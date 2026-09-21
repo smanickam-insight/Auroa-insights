@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="description" content="Aurora by Insight: a unified Data and AI Governance portfolio for trusted, responsible, observable, and cost-effective AI at enterprise scale." />
+  <title>Aurora™ by Insight | Unified Data & AI Governance</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#FFFFFF',
+            aurora: {
+              cyan: '#4EC7EA',
+              blue: '#5990F0',
+              violet: '#582873',
+              pink: '#D30C55',
+              green: '#B01C87'
+            }
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          boxShadow: {
+            cyan: '0 0 42px rgba(39,183,245,.16)',
+            violet: '0 0 42px rgba(245,130,32,.14)'
+          },
+          animation: {
+            float: 'float 7s ease-in-out infinite',
+            drift: 'drift 14s ease-in-out infinite alternate',
+            pulseSoft: 'pulseSoft 4s ease-in-out infinite'
+          },
+          keyframes: {
+            float: {'0%,100%':{transform:'translateY(0)'},'50%':{transform:'translateY(-12px)'}},
+            drift: {'0%':{transform:'translate3d(-2%,0,0) scale(1)'},'100%':{transform:'translate3d(3%,2%,0) scale(1.08)'}},
+            pulseSoft: {'0%,100%':{opacity:'.45'},'50%':{opacity:'1'}}
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 5%, rgba(22,103,217,.18), transparent 30%),
+        radial-gradient(circle at 86% 14%, rgba(39,183,245,.10), transparent 25%),
+        radial-gradient(circle at 55% 100%, rgba(245,130,32,.07), transparent 30%),
+        #07182D;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .25;
+      background-image: linear-gradient(rgba(255,255,255,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.024) 1px,transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 92%);
+    }
+    ::selection { background: rgba(39,183,245,.22); color: white; }
+    .glass {
+      background: linear-gradient(145deg,rgba(15,23,42,.73),rgba(7,11,27,.58));
+      border: 1px solid rgba(148,163,184,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.045), 0 22px 70px rgba(0,0,0,.25);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .glass-hover { transition: transform .35s ease,border-color .35s ease,box-shadow .35s ease,background .35s ease; }
+    .glass-hover:hover { transform: translateY(-6px); border-color: rgba(39,183,245,.32); box-shadow: 0 26px 74px rgba(0,0,0,.4),0 0 35px rgba(39,183,245,.08); }
+    .gradient-text {
+      background: linear-gradient(95deg,#ffffff 0%,#d8f4ff 30%,#77c9f5 56%,#f6a45d 78%,#ffffff 100%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shine 8s linear infinite;
+    }
+    @keyframes shine { to { background-position: 220% center; } }
+    .aurora-border { position: relative; }
+    .aurora-border::before {
+      content:''; position:absolute; inset:-1px; border-radius:inherit; padding:1px;
+      background:linear-gradient(120deg,rgba(39,183,245,.66),transparent 30%,rgba(255,255,255,.18),transparent 66%,rgba(245,130,32,.52));
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;
+    }
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .nav-link.active { color:white; background:rgba(255,255,255,.055); border-color:rgba(39,183,245,.25); }
+    .module-panel { display:none; }
+    .module-panel.active { display:block; animation:panelIn .45s cubic-bezier(.2,.85,.2,1) both; }
+    @keyframes panelIn { from{opacity:0;transform:translateY(10px) scale(.992)}to{opacity:1;transform:none} }
+    .module-tab.active { color:white; border-color:rgba(39,183,245,.32); background:linear-gradient(110deg,rgba(39,183,245,.085),rgba(245,130,32,.07)); box-shadow:0 0 24px rgba(39,183,245,.055); }
+    .module-tab.active .module-dot { box-shadow:0 0 14px currentColor; }
+    .question-card { transition:all .35s ease; }
+    .question-card:hover { transform:translateX(5px); border-color:rgba(245,130,32,.25); background:rgba(245,130,32,.045); }
+    .journey-node.active { color:white; border-color:rgba(39,183,245,.38); background:rgba(39,183,245,.08); box-shadow:0 0 30px rgba(39,183,245,.085); }
+    .metric { font-variant-numeric:tabular-nums; }
+    .modal { transition:opacity .25s ease; }
+    .modal.hidden { display:none; }
+    .mobile-menu.hidden { display:none; }
+
+    .insight-kicker { color: #F58220; }
+    .insight-rule { background: linear-gradient(90deg,#F58220,rgba(245,130,32,.12),transparent); }
+    .aurora-ribbon {
+      position: absolute;
+      width: 115%;
+      height: 150px;
+      left: -8%;
+      border-radius: 50%;
+      filter: blur(26px);
+      opacity: .24;
+      pointer-events: none;
+      transform: rotate(-8deg);
+      background: linear-gradient(90deg,transparent 0%,rgba(39,183,245,.12) 18%,rgba(39,183,245,.48) 42%,rgba(117,147,225,.28) 62%,rgba(245,130,32,.18) 82%,transparent 100%);
+      animation: auroraWave 13s ease-in-out infinite alternate;
+    }
+    .aurora-ribbon.secondary {
+      height: 95px;
+      opacity: .14;
+      transform: rotate(7deg);
+      animation-duration: 17s;
+      animation-direction: alternate-reverse;
+      background: linear-gradient(90deg,transparent,rgba(22,103,217,.34),rgba(255,255,255,.12),rgba(245,130,32,.20),transparent);
+    }
+    @keyframes auroraWave {
+      0% { translate: -4% 0; scale: .95 1; }
+      50% { translate: 2% -18px; scale: 1.03 1.08; }
+      100% { translate: 5% 10px; scale: .98 .94; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important} }
+
+    /* Insight official light brand theme */
+    :root{color-scheme:light;--hustle:#D30C55;--inspired:#ED1944;--heart:#B01C87;--hunger:#D40E8C;--harmony:#582873;--vision:#5990F0;--zeal:#4EC7EA;--carbon:#3E332D;--cloud:#BDBDBD;--calm:#E0E0E0;--clarity:#F5F5F5;--hunger-lite:#F8D5F8;--harmony-lite:#E8DAFF;--vision-lite:#D0E2FF;--zeal-lite:#C5EDFA}
+    body{color:var(--carbon);background:radial-gradient(circle at 13% 8%,rgba(248,213,248,.72),transparent 27%),radial-gradient(circle at 88% 13%,rgba(197,237,250,.76),transparent 28%),radial-gradient(circle at 50% 92%,rgba(208,226,255,.52),transparent 30%),#fff}
+    body::before{opacity:.42;background-image:linear-gradient(rgba(88,40,115,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(88,40,115,.035) 1px,transparent 1px)}
+    header{background:rgba(255,255,255,.9)!important;border-color:rgba(88,40,115,.1)!important;box-shadow:0 4px 24px rgba(62,51,45,.06)}
+    .mobile-menu{background:rgba(255,255,255,.98)!important}.glass{background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(245,245,245,.9));border-color:rgba(88,40,115,.13);box-shadow:inset 0 1px 0 #fff,0 18px 48px rgba(62,51,45,.1)}
+    .glass-hover:hover{border-color:rgba(211,12,85,.34);box-shadow:0 24px 58px rgba(88,40,115,.14),0 0 30px rgba(78,199,234,.12)}
+    .gradient-text{background:linear-gradient(95deg,var(--harmony),var(--hunger) 32%,var(--hustle) 58%,var(--inspired) 78%,var(--harmony));background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent!important}
+    .aurora-border::before{background:linear-gradient(120deg,var(--zeal),transparent 30%,var(--vision),transparent 66%,var(--hustle))}.insight-kicker{color:var(--hustle)}
+    .text-white{color:var(--harmony)!important}.text-slate-200,.text-slate-300{color:var(--carbon)!important}.text-slate-400{color:#675C56!important}.text-slate-500,.text-slate-600{color:#756A65!important}.text-cyan-100,.text-cyan-200,.text-cyan-300,.text-cyan-400{color:#187C9B!important}.text-violet-300,.text-violet-400{color:var(--harmony)!important}.text-pink-300,.text-pink-400{color:var(--hustle)!important}.text-emerald-300,.text-emerald-400{color:var(--heart)!important}.text-blue-300,.text-blue-400{color:#356FCB!important}.text-amber-300,.text-amber-400{color:var(--inspired)!important}
+    .bg-white\/\[\.012\]{background-color:rgba(245,245,245,.62)!important}.bg-white\/\[\.025\],.bg-white\/\[\.035\],.bg-white\/\[\.04\],.bg-white\/\[\.055\],.bg-white\/\[\.07\]{background-color:rgba(255,255,255,.8)!important}.bg-black\/15{background-color:rgba(232,218,255,.22)!important}
+    .border-white\/\[\.055\],.border-white\/\[\.06\],.border-white\/\[\.065\],.border-white\/\[\.07\],.border-white\/\[\.08\],.border-white\/10,.border-white\/20{border-color:rgba(88,40,115,.14)!important}
+    .nav-link.active{color:var(--harmony)!important;background:var(--harmony-lite);border-color:rgba(88,40,115,.2)}.module-tab.active{color:var(--harmony);border-color:rgba(211,12,85,.25);background:linear-gradient(110deg,var(--hunger-lite),var(--vision-lite))}.question-card:hover{border-color:rgba(211,12,85,.28);background:rgba(248,213,248,.38)}.journey-node.active{color:var(--harmony);border-color:rgba(89,144,240,.38);background:var(--vision-lite)}
+    a.bg-gradient-to-r,button.bg-gradient-to-r,a.bg-gradient-to-r i,button.bg-gradient-to-r i{color:#fff!important}.orbit-card{background:rgba(255,255,255,.97)}.orbit-card b{color:var(--harmony)!important}.orbit-card small{color:#756A65!important}#exploreModal{background:rgba(62,51,45,.38)!important}
+  </style>
+</head>
+<body class="text-slate-200 antialiased overflow-x-hidden">
+  <div class="fixed inset-x-0 top-0 z-[80] h-px bg-gradient-to-r from-transparent via-aurora-cyan to-transparent"></div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 inset-x-0 z-50 border-b border-white/[.07] bg-night/75 backdrop-blur-2xl">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group" aria-label="Aurora home">
+        <span class="relative grid place-items-center w-10 h-10 rounded-2xl bg-gradient-to-br from-aurora-blue via-aurora-cyan to-aurora-pink shadow-cyan group-hover:scale-105 transition-transform"><i data-lucide="sparkles" class="w-5 h-5 text-white"></i><span class="absolute inset-0 rounded-2xl border border-white/30"></span></span>
+        <span><span class="block text-base font-extrabold tracking-[.10em] text-white">AURORA™</span><span class="block text-[9px] uppercase tracking-[.23em] text-cyan-300">by Insight</span></span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
+        <a class="nav-link active px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#home">Overview</a>
+        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#challenge">The Challenge</a>
+        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#platform">Platform</a>
+        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#portfolio">Portfolio</a>
+        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#outcomes">Outcomes</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button onclick="openModal()" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-cyan-300/20 bg-cyan-300/[.07] px-4 py-2.5 text-xs font-semibold text-cyan-100 hover:bg-cyan-300/12 hover:border-cyan-300/40 transition"><i data-lucide="play-circle" class="w-4 h-4"></i>Explore Aurora</button>
+        <button id="menuButton" class="lg:hidden p-2.5 rounded-xl border border-white/10 bg-white/[.04]" aria-label="Toggle menu"><i data-lucide="menu" class="w-5 h-5"></i></button>
+      </div>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu hidden lg:hidden border-t border-white/[.06] px-4 py-4 bg-night/95 grid grid-cols-2 gap-2">
+      <a href="#home" class="p-3 rounded-xl bg-white/[.04] text-sm">Overview</a><a href="#challenge" class="p-3 rounded-xl bg-white/[.04] text-sm">The Challenge</a><a href="#platform" class="p-3 rounded-xl bg-white/[.04] text-sm">Platform</a><a href="#portfolio" class="p-3 rounded-xl bg-white/[.04] text-sm">Portfolio</a><a href="#outcomes" class="p-3 rounded-xl bg-white/[.04] text-sm">Outcomes</a><button onclick="openModal()" class="p-3 rounded-xl bg-cyan-300/10 text-cyan-200 text-left text-sm">Explore Aurora</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+      <div class="aurora-ribbon top-[19%]"></div>
+      <div class="aurora-ribbon secondary top-[43%]"></div>
+      <div class="absolute top-[12%] -left-28 w-[430px] h-[430px] rounded-full bg-indigo-500/16 blur-[100px] animate-drift"></div>
+      <div class="absolute top-[9%] right-[-130px] w-[500px] h-[500px] rounded-full bg-cyan-400/11 blur-[120px] animate-drift"></div>
+      <div class="absolute bottom-[-220px] left-[35%] w-[600px] h-[500px] rounded-full bg-violet-500/13 blur-[130px]"></div>
+      <div class="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.08fr_.92fr] gap-12 items-center">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[.055] px-3.5 py-2 text-[10px] sm:text-[11px] uppercase tracking-[.19em] text-cyan-200"><span class="relative flex w-2 h-2"><span class="absolute inset-0 rounded-full bg-cyan-300 animate-ping opacity-60"></span><span class="relative rounded-full bg-cyan-300 w-2 h-2"></span></span>Unified Data &amp; AI Governance</div>
+          <h1 class="mt-7 text-5xl sm:text-6xl lg:text-7xl xl:text-[88px] leading-[.94] font-black tracking-[-.055em] gradient-text">Accelerate data delivery<br>with governed AI.</h1>
+          <p class="mt-7 max-w-2xl text-base sm:text-lg leading-8 text-slate-400">Build trustworthy data products, simplify metadata operations, and provide realistic test data without increasing production-data exposure. Aurora™ brings intelligence, governance, and automation into every stage of the enterprise data lifecycle.</p>
+          <div class="mt-5 flex items-center gap-3 max-w-xl"><span class="h-px w-12 bg-orange-400"></span><p class="text-[10px] sm:text-xs uppercase tracking-[.19em] text-orange-300">Trusted data. Governed metadata. Safer innovation.</p></div>
+          <div class="mt-9 flex flex-col sm:flex-row gap-3">
+            <a href="#portfolio" class="group inline-flex justify-center items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#582873] via-[#D40E8C] to-[#ED1944] px-6 py-3.5 text-sm font-bold text-white shadow-cyan hover:brightness-110 hover:-translate-y-0.5 transition">Explore our accelerators<i data-lucide="arrow-down-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition"></i></a>
+            <a href="#platform" class="inline-flex justify-center items-center gap-2.5 rounded-xl border border-white/10 bg-white/[.035] px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/[.07] hover:border-white/20 transition"><i data-lucide="layers-3" class="w-4 h-4 text-violet-300"></i>See how it works</a>
+          </div>
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
+            <div><p class="text-lg font-bold text-white">Trust</p><p class="text-[11px] text-slate-600">Reliable data</p></div>
+            <div><p class="text-lg font-bold text-white">Responsibility</p><p class="text-[11px] text-slate-600">Assured AI</p></div>
+            <div><p class="text-lg font-bold text-white">Visibility</p><p class="text-[11px] text-slate-600">Runtime insight</p></div>
+            <div><p class="text-lg font-bold text-white">Control</p><p class="text-[11px] text-slate-600">Risk and value</p></div>
+          </div>
+        </div>
+
+        <div class="relative h-[620px] sm:h-[700px] lg:h-[760px] reveal" style="transition-delay:120ms">
+          <div class="absolute inset-0 grid place-items-center">
+            <div class="absolute w-[390px] h-[390px] sm:w-[540px] sm:h-[540px] lg:w-[620px] lg:h-[620px] rounded-full border border-[#582873]/20"></div>
+            <div class="absolute w-[500px] h-[500px] sm:w-[690px] sm:h-[690px] lg:w-[820px] lg:h-[820px] rounded-full border border-[#4EC7EA]/25"></div>
+            <div class="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full bg-[#C5EDFA]/70 blur-[90px]"></div>
+            <div class="absolute w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] rounded-full bg-[#E8DAFF]/80 blur-[60px]"></div>
+            <div class="relative z-10 w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-[42px] bg-gradient-to-br from-white to-[#F5F5F5] border border-[#582873]/20 shadow-[0_0_80px_rgba(78,199,234,.25)] flex items-center justify-center aurora-border">
+              <div class="text-center"><i data-lucide="sparkles" class="mx-auto w-11 h-11 text-[#4EC7EA]"></i><p class="mt-4 text-2xl sm:text-3xl lg:text-4xl font-black tracking-[.05em] text-[#582873]">AURORA™</p><p class="mt-2 uppercase tracking-[.35em] text-[9px] sm:text-[10px] text-[#3E332D]">Governance Core</p></div>
+            </div>
+            <button onclick="activateModule('beacon')" class="orbit-card absolute top-[3%] left-[0%] glass glass-hover rounded-2xl px-4 py-4 text-left w-44 h-20 sm:w-52 sm:h-24 flex items-center"><span class="flex items-center gap-3"><span class="p-2.5 rounded-xl bg-[#C5EDFA] text-[#187C9B]"><i data-lucide="badge-check" class="w-5 h-5"></i></span><span><b class="block text-sm text-white">Beacon™</b><small class="text-[10px] text-slate-500">AI Data Quality</small></span></span></button>
+            <button onclick="activateModule('prism')" class="orbit-card absolute top-[8%] right-[0%] glass glass-hover rounded-2xl px-4 py-4 text-left w-44 h-20 sm:w-52 sm:h-24 flex items-center"><span class="flex items-center gap-3"><span class="p-2.5 rounded-xl bg-[#E8DAFF] text-[#582873]"><i data-lucide="gem" class="w-5 h-5"></i></span><span><b class="block text-sm text-white">Prism™</b><small class="text-[10px] text-slate-500">SynGen</small></span></span></button>
+            <button onclick="activateModule('ethos')" class="orbit-card absolute bottom-[17%] left-[0%] glass glass-hover rounded-2xl px-4 py-4 text-left w-44 h-20 sm:w-52 sm:h-24 flex items-center"><span class="flex items-center gap-3"><span class="p-2.5 rounded-xl bg-[#F8D5F8] text-[#B01C87]"><i data-lucide="scale" class="w-5 h-5"></i></span><span><b class="block text-sm text-white">Ethos™</b><small class="text-[10px] text-slate-500">Responsible AI</small></span></span></button>
+            <button onclick="activateModule('pulse')" class="orbit-card absolute bottom-[3%] left-1/2 -translate-x-1/2 glass glass-hover rounded-2xl px-4 py-4 text-left w-44 h-20 sm:w-52 sm:h-24 flex items-center"><span class="flex items-center gap-3"><span class="p-2.5 rounded-xl bg-[#F8D5F8] text-[#D30C55]"><i data-lucide="activity" class="w-5 h-5"></i></span><span><b class="block text-sm text-white">Pulse™</b><small class="text-[10px] text-slate-500">AI FinOps</small></span></span></button>
+            <button onclick="activateModule('insight')" class="orbit-card absolute bottom-[19%] right-[0%] glass glass-hover rounded-2xl px-4 py-4 text-left w-44 h-20 sm:w-52 sm:h-24 flex items-center"><span class="flex items-center gap-3"><span class="p-2.5 rounded-xl bg-[#D0E2FF] text-[#356FCB]"><i data-lucide="scan-eye" class="w-5 h-5"></i></span><span><b class="block text-sm text-white">Insight™</b><small class="text-[10px] text-slate-500">Observability</small></span></span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenge -->
+    <section id="challenge" class="py-24 sm:py-32 border-y border-white/[.055] bg-white/[.012]">
+      <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl reveal">
+          <p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">The enterprise reality</p>
+          <h2 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-.04em] text-white">AI opportunity is accelerating.<br><span class="text-slate-500">So is governance complexity.</span></h2>
+          <p class="mt-6 text-base sm:text-lg leading-8 text-slate-400">Data and AI are becoming the intelligence layer of the modern enterprise, shaping decisions, customer experiences, risk management, and competitive advantage. Yet fragmented controls make trust and scale difficult.</p>
+        </div>
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-6 mt-12">
+          <div class="glass aurora-border rounded-[26px] p-7 reveal">
+            <p class="text-[10px] uppercase tracking-[.2em] text-cyan-300">The central insight</p>
+            <blockquote class="mt-5 text-2xl sm:text-3xl font-bold leading-tight text-white">“These are not separate technology challenges. They are connected governance challenges.”</blockquote>
+            <div class="mt-8 h-px bg-gradient-to-r from-cyan-300/50 via-violet-400/40 to-transparent"></div>
+            <p class="mt-6 text-sm leading-6 text-slate-500">Aurora establishes one connected model for trust, accountability, visibility, financial control, evidence, and risk.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <article class="question-card rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal"><span class="grid place-items-center w-9 h-9 rounded-xl bg-cyan-400/10 text-cyan-300"><i data-lucide="badge-check" class="w-4.5 h-4.5"></i></span><h3 class="mt-4 font-semibold text-white">Can we trust our data?</h3><p class="mt-2 text-xs leading-5 text-slate-500">Quality, lineage, ownership, and fitness for AI.</p></article>
+            <article class="question-card rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal" style="transition-delay:70ms"><span class="grid place-items-center w-9 h-9 rounded-xl bg-emerald-400/10 text-emerald-300"><i data-lucide="brain-circuit" class="w-4.5 h-4.5"></i></span><h3 class="mt-4 font-semibold text-white">Can we explain AI decisions?</h3><p class="mt-2 text-xs leading-5 text-slate-500">Fairness, transparency, assurance, and accountability.</p></article>
+            <article class="question-card rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal"><span class="grid place-items-center w-9 h-9 rounded-xl bg-violet-400/10 text-violet-300"><i data-lucide="shield" class="w-4.5 h-4.5"></i></span><h3 class="mt-4 font-semibold text-white">Can we innovate safely?</h3><p class="mt-2 text-xs leading-5 text-slate-500">Protected access to useful, privacy-aware data.</p></article>
+            <article class="question-card rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal" style="transition-delay:70ms"><span class="grid place-items-center w-9 h-9 rounded-xl bg-pink-400/10 text-pink-300"><i data-lucide="circle-dollar-sign" class="w-4.5 h-4.5"></i></span><h3 class="mt-4 font-semibold text-white">Can we control AI spend?</h3><p class="mt-2 text-xs leading-5 text-slate-500">Consumption, allocation, optimization, and value.</p></article>
+            <article class="question-card sm:col-span-2 rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal"><div class="flex flex-col sm:flex-row gap-4 sm:items-center"><span class="grid place-items-center w-9 h-9 rounded-xl bg-blue-400/10 text-blue-300 shrink-0"><i data-lucide="scan-eye" class="w-4.5 h-4.5"></i></span><div><h3 class="font-semibold text-white">Can we see what happens after deployment?</h3><p class="mt-1 text-xs leading-5 text-slate-500">Continuous visibility into pipelines, models, agents, costs, risks, and operational performance.</p></div></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform -->
+    <section id="platform" class="py-24 sm:py-32">
+      <div class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] text-cyan-300">AI-powered metadata operations</p><h2 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-.04em] text-white">Turn business language into governed metadata actions.</h2><p class="mt-5 text-base sm:text-lg leading-8 text-slate-400">MetaUI is the operating layer for enterprise metadata. Users describe the required outcome in natural language; the platform prepares a context-aware proposal, validates it, and keeps final approval with a human reviewer.</p></div>
+        <div class="mt-14 glass aurora-border rounded-[30px] p-5 sm:p-8 lg:p-10 reveal overflow-hidden">
+          <div class="grid lg:grid-cols-[1fr_auto_1fr] gap-7 items-center">
+            <div class="space-y-3">
+              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-cyan-400/10 text-cyan-300"><i data-lucide="search" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Data Discovery</p><p class="text-[10px] text-slate-500">Know what exists and where it lives</p></div></div>
+              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-violet-400/10 text-violet-300"><i data-lucide="user-round-check" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Ownership</p><p class="text-[10px] text-slate-500">Clarify stewardship and accountability</p></div></div>
+              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-emerald-400/10 text-emerald-300"><i data-lucide="scroll-text" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Policy &amp; Controls</p><p class="text-[10px] text-slate-500">Turn standards into operating guardrails</p></div></div>
+            </div>
+            <div class="relative grid place-items-center py-8 lg:py-0">
+              <div class="absolute w-64 h-64 rounded-full bg-gradient-to-br from-cyan-400/10 to-violet-500/15 blur-xl animate-pulseSoft"></div>
+              <div class="relative w-52 h-52 sm:w-60 sm:h-60 rounded-full border border-cyan-300/20 grid place-items-center shadow-cyan">
+                <div class="absolute inset-5 rounded-full border border-dashed border-violet-300/20 animate-[spin_22s_linear_infinite]"></div>
+                <div class="relative text-center"><span class="grid place-items-center mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-300/20 to-violet-500/20 border border-cyan-300/20"><i data-lucide="network" class="w-8 h-8 text-cyan-200"></i></span><p class="mt-4 text-xl font-black text-white">MetaUI</p><p class="mt-1 text-[9px] uppercase tracking-[.22em] text-slate-500">Governed Metadata Workspace</p></div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-pink-400/10 text-pink-300"><i data-lucide="triangle-alert" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Risk Management</p><p class="text-[10px] text-slate-500">Identify, prioritize, and mitigate exposure</p></div></div>
+              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-blue-400/10 text-blue-300"><i data-lucide="file-check-2" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Evidence</p><p class="text-[10px] text-slate-500">Demonstrate control effectiveness</p></div></div>
+              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-amber-400/10 text-amber-300"><i data-lucide="landmark" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Accountability</p><p class="text-[10px] text-slate-500">Connect decisions to responsible owners</p></div></div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-white/[.065] grid sm:grid-cols-3 gap-4 text-center"><div><p class="text-2xl font-bold text-white">Unified</p><p class="mt-1 text-[11px] text-slate-500">Across data, models, and agents</p></div><div><p class="text-2xl font-bold text-white">Continuous</p><p class="mt-1 text-[11px] text-slate-500">From discovery through runtime</p></div><div><p class="text-2xl font-bold text-white">Evidence-led</p><p class="mt-1 text-[11px] text-slate-500">For confidence and accountability</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accelerator spotlight -->
+    <section id="accelerators" class="py-24 sm:py-32 border-y border-white/[.055] bg-white/[.012]">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">Connected accelerator portfolio</p><h2 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-.04em] text-white">Trusted data. Governed metadata. Safer innovation.</h2><p class="mt-5 text-base sm:text-lg leading-8 text-slate-400">Three reusable accelerators strengthen the path from enterprise data to governed action.</p></div>
+        <div class="grid lg:grid-cols-3 gap-5 mt-12">
+          <article class="glass glass-hover aurora-border rounded-[26px] p-7 reveal"><span class="grid place-items-center w-12 h-12 rounded-2xl bg-[#C5EDFA] text-[#187C9B]"><i data-lucide="badge-check" class="w-6 h-6"></i></span><p class="mt-6 text-[10px] uppercase tracking-[.2em] text-[#D30C55]">AI-Powered Data Quality</p><h3 class="mt-2 text-2xl font-bold text-white">Build trust into every data product.</h3><p class="mt-4 text-sm leading-6 text-slate-400">Profile, validate, cleanse, score, and monitor enterprise data through an AI-assisted, metadata-driven quality framework.</p><ul class="mt-5 space-y-2 text-xs text-slate-500"><li>• Automated profiling and reusable quality rules</li><li>• Quality scoring, anomaly identification, and reconciliation</li><li>• Audit, monitoring, and human-in-the-loop governance</li></ul></article>
+          <article class="glass glass-hover aurora-border rounded-[26px] p-7 reveal" style="transition-delay:70ms"><span class="grid place-items-center w-12 h-12 rounded-2xl bg-[#E8DAFF] text-[#582873]"><i data-lucide="message-square-code" class="w-6 h-6"></i></span><p class="mt-6 text-[10px] uppercase tracking-[.2em] text-[#D40E8C]">MetaUI</p><h3 class="mt-2 text-2xl font-bold text-white">Metadata becomes actionable.</h3><p class="mt-4 text-sm leading-6 text-slate-400">Turn natural-language intent into validated, reviewable, and governed metadata proposals across connected Fabric and Databricks environments.</p><ul class="mt-5 space-y-2 text-xs text-slate-500"><li>• Context-aware metadata proposals</li><li>• Row-level review and explicit human approval</li><li>• Discovery, lineage, quality context, and change history</li></ul></article>
+          <article class="glass glass-hover aurora-border rounded-[26px] p-7 reveal" style="transition-delay:140ms"><span class="grid place-items-center w-12 h-12 rounded-2xl bg-[#D0E2FF] text-[#356FCB]"><i data-lucide="gem" class="w-6 h-6"></i></span><p class="mt-6 text-[10px] uppercase tracking-[.2em] text-[#5990F0]">SynGen</p><h3 class="mt-2 text-2xl font-bold text-white">Generate realistic data, not another production copy.</h3><p class="mt-4 text-sm leading-6 text-slate-400">Create schema-aware, relationship-consistent, and reusable synthetic datasets for engineering, QA, analytics, demonstrations, and AI.</p><ul class="mt-5 space-y-2 text-xs text-slate-500"><li>• Dependency-aware, configurable generation</li><li>• Controlled negative testing and quality feedback</li><li>• Reusable jobs, previews, exports, and APIs</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-24 sm:py-32 border-y border-white/[.055] bg-white/[.012]">
+      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">The Aurora portfolio</p><h2 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-.04em] text-white">Five capabilities. One connected governance fabric.</h2><p class="mt-5 text-base sm:text-lg leading-8 text-slate-400">Explore purpose-built capabilities for data trust, safe data access, Responsible AI, AI FinOps, and runtime observability.</p></div>
+        <div class="mt-10 grid lg:grid-cols-[310px_1fr] gap-5">
+          <div class="space-y-2 reveal" id="moduleTabs">
+            <button data-module="beacon" onclick="selectModule('beacon')" class="module-tab active w-full flex items-center gap-3 rounded-2xl border border-transparent p-4 text-left text-slate-400 transition"><span class="module-dot w-2.5 h-2.5 rounded-full bg-cyan-300 text-cyan-300"></span><span class="flex-1"><b class="block text-sm">Aurora Beacon™</b><small class="text-[10px] text-slate-600">Data Quality &amp; Trust</small></span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+            <button data-module="prism" onclick="selectModule('prism')" class="module-tab w-full flex items-center gap-3 rounded-2xl border border-transparent p-4 text-left text-slate-400 transition"><span class="module-dot w-2.5 h-2.5 rounded-full bg-violet-300 text-violet-300"></span><span class="flex-1"><b class="block text-sm">Aurora Prism™</b><small class="text-[10px] text-slate-600">Synthetic Data &amp; Safe Access</small></span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+            <button data-module="ethos" onclick="selectModule('ethos')" class="module-tab w-full flex items-center gap-3 rounded-2xl border border-transparent p-4 text-left text-slate-400 transition"><span class="module-dot w-2.5 h-2.5 rounded-full bg-emerald-300 text-emerald-300"></span><span class="flex-1"><b class="block text-sm">Aurora Ethos™</b><small class="text-[10px] text-slate-600">Responsible AI</small></span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+            <button data-module="pulse" onclick="selectModule('pulse')" class="module-tab w-full flex items-center gap-3 rounded-2xl border border-transparent p-4 text-left text-slate-400 transition"><span class="module-dot w-2.5 h-2.5 rounded-full bg-pink-300 text-pink-300"></span><span class="flex-1"><b class="block text-sm">Aurora Pulse™</b><small class="text-[10px] text-slate-600">AI FinOps</small></span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+            <button data-module="insight" onclick="selectModule('insight')" class="module-tab w-full flex items-center gap-3 rounded-2xl border border-transparent p-4 text-left text-slate-400 transition"><span class="module-dot w-2.5 h-2.5 rounded-full bg-blue-300 text-blue-300"></span><span class="flex-1"><b class="block text-sm">Aurora Insight™</b><small class="text-[10px] text-slate-600">Observability &amp; Runtime Monitoring</small></span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          </div>
+          <div class="glass aurora-border rounded-[28px] min-h-[520px] overflow-hidden reveal" style="transition-delay:100ms">
+            <div id="modulePanels"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lifecycle -->
+    <section class="py-24 sm:py-32">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] text-cyan-300">The governance journey</p><h2 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-[-.04em] text-white">From discovery to enterprise scale.</h2><p class="mt-5 text-slate-400">Select a stage to see how Aurora continuously governs the Data and AI lifecycle.</p></div>
+        <div class="mt-12 glass rounded-[26px] p-5 sm:p-8 reveal">
+          <div id="journeyNodes" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2"></div>
+          <div id="journeyDetail" class="mt-7 rounded-2xl border border-white/[.07] bg-black/15 p-6"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcomes -->
+    <section id="outcomes" class="py-24 sm:py-32 border-y border-white/[.055] bg-white/[.012]">
+      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-end">
+          <div class="reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">Business outcomes</p><h2 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-[-.04em] text-white">Governance designed to unlock value.</h2><p class="mt-5 text-base leading-7 text-slate-400">Aurora transforms governance from a reactive compliance exercise into a proactive business capability for confident innovation.</p></div>
+          <div class="grid sm:grid-cols-3 gap-4 reveal">
+            <div class="glass rounded-2xl p-5"><i data-lucide="rocket" class="w-5 h-5 text-cyan-300"></i><p class="mt-5 text-2xl font-bold text-white">Faster</p><p class="mt-1 text-xs text-slate-500">Innovation with guardrails</p></div>
+            <div class="glass rounded-2xl p-5"><i data-lucide="shield-check" class="w-5 h-5 text-emerald-300"></i><p class="mt-5 text-2xl font-bold text-white">Safer</p><p class="mt-1 text-xs text-slate-500">Risk-aware adoption</p></div>
+            <div class="glass rounded-2xl p-5"><i data-lucide="trending-up" class="w-5 h-5 text-violet-300"></i><p class="mt-5 text-2xl font-bold text-white">Smarter</p><p class="mt-1 text-xs text-slate-500">Value-led investment</p></div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
+          <article class="glass glass-hover rounded-2xl p-6 reveal"><span class="text-[10px] uppercase tracking-[.19em] text-cyan-300">01</span><h3 class="mt-4 font-semibold text-white">Increased Data Trust</h3><p class="mt-2 text-sm leading-6 text-slate-500">Improve confidence in the information that powers analytics, automation, and AI.</p></article>
+          <article class="glass glass-hover rounded-2xl p-6 reveal" style="transition-delay:60ms"><span class="text-[10px] uppercase tracking-[.19em] text-violet-300">02</span><h3 class="mt-4 font-semibold text-white">Faster Safe Innovation</h3><p class="mt-2 text-sm leading-6 text-slate-500">Enable development and experimentation without exposing sensitive information.</p></article>
+          <article class="glass glass-hover rounded-2xl p-6 reveal" style="transition-delay:120ms"><span class="text-[10px] uppercase tracking-[.19em] text-emerald-300">03</span><h3 class="mt-4 font-semibold text-white">Responsible AI Adoption</h3><p class="mt-2 text-sm leading-6 text-slate-500">Operationalize transparency, assurance, human accountability, and fairness.</p></article>
+          <article class="glass glass-hover rounded-2xl p-6 reveal"><span class="text-[10px] uppercase tracking-[.19em] text-pink-300">04</span><h3 class="mt-4 font-semibold text-white">Cost Transparency</h3><p class="mt-2 text-sm leading-6 text-slate-500">Connect AI and agent consumption to ownership, optimization, and business value.</p></article>
+          <article class="glass glass-hover rounded-2xl p-6 reveal" style="transition-delay:60ms"><span class="text-[10px] uppercase tracking-[.19em] text-blue-300">05</span><h3 class="mt-4 font-semibold text-white">Production Visibility</h3><p class="mt-2 text-sm leading-6 text-slate-500">Continuously monitor the performance, behavior, and risk of production systems.</p></article>
+          <article class="glass glass-hover rounded-2xl p-6 reveal" style="transition-delay:120ms"><span class="text-[10px] uppercase tracking-[.19em] text-amber-300">06</span><h3 class="mt-4 font-semibold text-white">Regulatory Readiness</h3><p class="mt-2 text-sm leading-6 text-slate-500">Create traceable evidence and accountability across governance decisions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="relative py-28 sm:py-40 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(91,124,255,.15),transparent_42%)]"></div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[280px] rounded-full bg-violet-500/10 blur-[100px]"></div>
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <span class="inline-flex p-3 rounded-2xl border border-cyan-300/20 bg-cyan-300/[.06] text-cyan-200 shadow-cyan"><i data-lucide="sparkles" class="w-6 h-6"></i></span>
+        <h2 class="mt-7 text-3xl sm:text-5xl lg:text-6xl font-black tracking-[-.045em] text-white">Governance is not a control function.<br><span class="gradient-text">It is a growth enabler.</span></h2>
+        <p class="mt-7 max-w-3xl mx-auto text-base sm:text-lg leading-8 text-slate-400">Aurora™ provides the trust fabric that allows organizations to innovate at scale, manage risk with confidence, and transform AI from experimentation into enterprise value.</p>
+        <div class="mt-10 space-y-2 text-lg sm:text-2xl font-bold"><p>Govern with confidence.</p><p>Scale with trust.</p><p class="text-cyan-300">Transform with Insight.</p></div>
+        <button onclick="openModal()" class="mt-10 inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#582873] via-[#D40E8C] to-[#ED1944] px-7 py-4 text-sm font-bold text-white shadow-cyan hover:brightness-110 hover:-translate-y-0.5 transition">Request an accelerator demonstration<i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/[.06] py-8">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 justify-between items-center text-[11px] text-slate-600"><div class="flex items-center gap-2"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i><span>Aurora™ by Insight</span></div><p>Unified Data &amp; AI Governance</p><p>Insight expertise • Aurora governance • Enterprise value</p></div>
+  </footer>
+
+  <!-- Explore modal -->
+  <div id="exploreModal" class="modal hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-md p-4 items-center justify-center" onclick="if(event.target===this) closeModal()" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="glass aurora-border rounded-[28px] w-full max-w-2xl p-6 sm:p-8">
+      <div class="flex justify-between items-start gap-4"><div><p class="text-[10px] uppercase tracking-[.22em] text-cyan-300">Product overview</p><h2 id="modalTitle" class="mt-2 text-2xl sm:text-3xl font-bold text-white">Explore Aurora™</h2></div><button onclick="closeModal()" class="p-2 rounded-xl border border-white/10 text-slate-400 hover:text-white hover:bg-white/[.05]" aria-label="Close"><i data-lucide="x" class="w-5 h-5"></i></button></div>
+      <p class="mt-5 text-sm leading-6 text-slate-400">Aurora is designed for organizations that need to scale data and AI while maintaining trust, accountability, cost control, and operational visibility.</p>
+      <div class="grid sm:grid-cols-2 gap-3 mt-6">
+        <button onclick="closeModal();location.href='#platform'" class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 text-left hover:border-cyan-300/30 transition"><i data-lucide="layers-3" class="w-5 h-5 text-cyan-300"></i><b class="block mt-3 text-sm text-white">View the control plane</b><span class="block mt-1 text-[11px] text-slate-500">Explore Aurora's foundation</span></button>
+        <button onclick="closeModal();location.href='#portfolio'" class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 text-left hover:border-violet-300/30 transition"><i data-lucide="boxes" class="w-5 h-5 text-violet-300"></i><b class="block mt-3 text-sm text-white">Explore the modules</b><span class="block mt-1 text-[11px] text-slate-500">See the five capabilities</span></button>
+      </div>
+      <div class="mt-5 rounded-2xl border border-cyan-300/15 bg-cyan-300/[.04] p-4"><p class="text-sm font-semibold text-white">Aurora™ by Insight</p><p class="mt-1 text-xs text-slate-500">The unified operating model for trusted Data and AI governance.</p></div>
+    </div>
+  </div>
+
+  <script>
+    const modules = {
+      beacon: {
+        name:'Aurora Beacon™', subtitle:'AI-Powered Data Quality', icon:'badge-check', color:'cyan',
+        challenge:'Data quality is too often reactive, fragmented, and difficult to scale.',
+        statement:'Build trust into every data product with AI-assisted profiling, metadata-driven rules, cleansing, scoring, anomaly identification, reconciliation, and governed review across the data lifecycle.',
+        capabilities:['Automated data profiling','Metadata-driven quality rules','Cleansing and quality scoring','Anomaly identification and reconciliation','Audit, monitoring, and human review'],
+        outcomes:['Earlier issue detection','More trusted analytics and AI','Consistent, transparent quality controls'],
+        gradient:'from-cyan-400/20 via-blue-500/8 to-transparent', accent:'text-cyan-300', bg:'bg-cyan-400/10', border:'border-cyan-300/20'
+      },
+      prism: {
+        name:'Aurora Prism™ · SynGen', subtitle:'Synthetic Data & Safe Access', icon:'gem', color:'violet',
+        challenge:'Teams need production-like data, but production copies create delay and governance risk.',
+        statement:'Generate realistic, schema-aware and relationship-consistent datasets without distributing production customer records. Configure once, validate the output, and reuse generation jobs across teams and environments.',
+        capabilities:['Schema and relationship intelligence','Deterministic, faker, composed, and optional AI rules','Configurable volumes and repeatable runs','Controlled negative testing','Quality feedback, preview, export, and APIs'],
+        outcomes:['Faster access to usable test data','Broader volume and edge-case coverage','Reduced dependency on production extracts'],
+        gradient:'from-violet-500/20 via-fuchsia-500/8 to-transparent', accent:'text-violet-300', bg:'bg-violet-400/10', border:'border-violet-300/20'
+      },
+      ethos: {
+        name:'Aurora Ethos™', subtitle:'Responsible AI', icon:'scale', color:'emerald',
+        challenge:'Lack of explainability, fairness, and assurance.',
+        statement:'Operationalize Responsible AI through explainability, fairness, assurance, human oversight, and clear accountability across the AI lifecycle.',
+        capabilities:['AI risk assessment','Explainability and fairness review','Assurance evidence','Human accountability workflows'],
+        outcomes:['Responsible AI adoption','Improved transparency','Defensible governance decisions'],
+        gradient:'from-emerald-400/20 via-cyan-500/7 to-transparent', accent:'text-emerald-300', bg:'bg-emerald-400/10', border:'border-emerald-300/20'
+      },
+      pulse: {
+        name:'Aurora Pulse™', subtitle:'AI FinOps', icon:'activity', color:'pink',
+        challenge:'Uncontrolled AI and agent spend.',
+        statement:'Bring financial discipline to AI and agentic systems with visibility into consumption, ownership, optimization opportunities, cost, and value.',
+        capabilities:['AI consumption visibility','Cost allocation and ownership','Optimization recommendations','Value realization tracking'],
+        outcomes:['Controlled AI spending','Clear cost accountability','Better investment decisions'],
+        gradient:'from-pink-500/20 via-violet-500/8 to-transparent', accent:'text-pink-300', bg:'bg-pink-400/10', border:'border-pink-300/20'
+      },
+      insight: {
+        name:'Aurora Insight™', subtitle:'Observability & Runtime Monitoring', icon:'scan-eye', color:'blue',
+        challenge:'No visibility after production deployment.',
+        statement:'Extend governance into production with continuous visibility into data pipelines, models, agents, costs, risks, and operational behavior.',
+        capabilities:['Runtime performance monitoring','Model and agent observability','Risk and drift signals','Operational health visibility'],
+        outcomes:['Continuous production insight','Earlier risk detection','More resilient AI operations'],
+        gradient:'from-blue-500/20 via-cyan-500/8 to-transparent', accent:'text-blue-300', bg:'bg-blue-400/10', border:'border-blue-300/20'
+      }
+    };
+
+    const journeys = [
+      {id:'discover',label:'Discover',icon:'search',title:'Discover the Data and AI Estate',text:'Create visibility into critical data, models, agents, assets, and dependencies across the enterprise.',module:'MetaUI'},
+      {id:'trust',label:'Trust',icon:'badge-check',title:'Build Trust into Every Data Product',text:'Profile, validate, cleanse, score, and monitor data with reusable rules, quality feedback, and governed review.',module:'Aurora Beacon™'},
+      {id:'protect',label:'Protect',icon:'shield',title:'Generate Safe, Representative Data',text:'Use SynGen to create schema-aware, relationship-consistent datasets for engineering, QA, analytics, and AI without distributing production records.',module:'Aurora Prism™'},
+      {id:'govern',label:'Govern',icon:'scale',title:'Operationalize Responsible AI',text:'Embed explainability, fairness, assurance, evidence, and human accountability into AI delivery.',module:'Aurora Ethos™'},
+      {id:'optimize',label:'Optimize',icon:'circle-dollar-sign',title:'Optimize Cost and Value',text:'Connect consumption to ownership, improve cost transparency, and focus investment on measurable value.',module:'Aurora Pulse™'},
+      {id:'observe',label:'Observe',icon:'scan-eye',title:'Monitor Runtime Behavior',text:'Continuously observe data pipelines, models, and agents to identify performance, drift, and risk signals.',module:'Aurora Insight™'},
+      {id:'scale',label:'Scale',icon:'rocket',title:'Scale with Confidence',text:'Use an integrated governance operating model to expand adoption without losing control, trust, or accountability.',module:'Aurora Portfolio'}
+    ];
+
+    function renderPanels(){
+      document.getElementById('modulePanels').innerHTML = Object.entries(modules).map(([id,m],idx)=>`
+        <article id="panel-${id}" class="module-panel ${idx===0?'active':''} min-h-[520px] relative p-6 sm:p-8 lg:p-10 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br ${m.gradient}"></div>
+          <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full ${m.bg} blur-[80px]"></div>
+          <div class="relative z-10">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-5">
+              <div class="flex items-center gap-4"><span class="grid place-items-center w-14 h-14 rounded-2xl border ${m.border} ${m.bg} ${m.accent}"><i data-lucide="${m.icon}" class="w-7 h-7"></i></span><div><p class="text-[10px] uppercase tracking-[.2em] ${m.accent}">${m.subtitle}</p><h3 class="mt-1 text-2xl sm:text-3xl font-extrabold text-white">${m.name}</h3></div></div>
+              <span class="rounded-full border ${m.border} ${m.bg} px-3 py-1.5 text-[10px] ${m.accent}">Purpose-built capability</span>
+            </div>
+            <div class="mt-8 rounded-2xl border border-white/[.08] bg-black/15 p-5"><p class="text-[10px] uppercase tracking-[.18em] text-slate-500">Customer challenge</p><p class="mt-2 text-xl font-semibold text-white">${m.challenge}</p></div>
+            <p class="mt-7 max-w-3xl text-sm sm:text-base leading-7 text-slate-300">${m.statement}</p>
+            <div class="grid md:grid-cols-2 gap-5 mt-8">
+              <div><p class="text-[10px] uppercase tracking-[.18em] text-slate-500">Core capabilities</p><div class="mt-3 grid gap-2">${m.capabilities.map(x=>`<div class="flex items-center gap-2 rounded-xl border border-white/[.065] bg-white/[.025] p-3 text-xs text-slate-300"><i data-lucide="check-circle-2" class="w-4 h-4 ${m.accent}"></i>${x}</div>`).join('')}</div></div>
+              <div><p class="text-[10px] uppercase tracking-[.18em] text-slate-500">Business outcomes</p><div class="mt-3 space-y-3">${m.outcomes.map((x,i)=>`<div class="flex items-center gap-3"><span class="metric text-lg font-bold ${m.accent}">0${i+1}</span><span class="text-sm text-white">${x}</span></div>`).join('')}</div></div>
+            </div>
+          </div>
+        </article>`).join('');
+    }
+
+    function selectModule(id){
+      document.querySelectorAll('.module-tab').forEach(b=>b.classList.toggle('active',b.dataset.module===id));
+      document.querySelectorAll('.module-panel').forEach(p=>p.classList.toggle('active',p.id===`panel-${id}`));
+      lucide.createIcons();
+    }
+    function activateModule(id){ document.getElementById('portfolio').scrollIntoView({behavior:'smooth'}); setTimeout(()=>selectModule(id),420); }
+
+    function renderJourney(){
+      const wrap=document.getElementById('journeyNodes');
+      wrap.innerHTML=journeys.map((j,i)=>`<button data-journey="${j.id}" onclick="selectJourney('${j.id}')" class="journey-node ${i===0?'active':''} rounded-xl border border-white/[.08] bg-white/[.025] p-3 text-slate-500 hover:text-white transition"><i data-lucide="${j.icon}" class="w-4 h-4 mx-auto"></i><span class="block mt-2 text-[10px] font-semibold">${j.label}</span></button>`).join('');
+      selectJourney('discover');
+    }
+    function selectJourney(id){
+      const j=journeys.find(x=>x.id===id); if(!j)return;
+      document.querySelectorAll('.journey-node').forEach(n=>n.classList.toggle('active',n.dataset.journey===id));
+      document.getElementById('journeyDetail').innerHTML=`<div class="grid sm:grid-cols-[1fr_auto] gap-5 items-center"><div><p class="text-[10px] uppercase tracking-[.2em] text-cyan-300">${j.module}</p><h3 class="mt-2 text-xl font-bold text-white">${j.title}</h3><p class="mt-2 text-sm leading-6 text-slate-400">${j.text}</p></div><span class="text-5xl font-black text-white/[.04]">${String(journeys.indexOf(j)+1).padStart(2,'0')}</span></div>`;
+      lucide.createIcons();
+    }
+
+    function openModal(){const m=document.getElementById('exploreModal');m.classList.remove('hidden');m.classList.add('flex');document.body.style.overflow='hidden';lucide.createIcons();}
+    function closeModal(){const m=document.getElementById('exploreModal');m.classList.add('hidden');m.classList.remove('flex');document.body.style.overflow='';}
+
+    function observeReveals(){
+      const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08});
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+    }
+    function updateNav(){
+      const sections=['home','challenge','platform','portfolio','outcomes']; let current='home';
+      sections.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=110)current=id});
+      document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${current}`));
+    }
+
+    document.getElementById('menuButton').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+    document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('hidden')));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+    window.addEventListener('scroll',updateNav,{passive:true});
+
+    renderPanels(); renderJourney(); lucide.createIcons(); observeReveals(); updateNav();
+  </script>
+</body>
+</html>
