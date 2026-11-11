@@ -250,12 +250,12 @@
     .planet-label b{display:block;font-size:13px;line-height:1.2;color:var(--harmony)}.planet-label small{display:block;font-size:10px;color:#756A65}
     .orbit-planet:hover .planet-ball,.orbit-planet:focus-visible .planet-ball{box-shadow:inset -10px -12px 18px rgba(20,12,45,.5),inset 6px 6px 12px rgba(255,255,255,.4),0 0 44px var(--glow),0 0 0 4px rgba(255,255,255,.8)}
     .orbit-planet:focus-visible{outline:none}.orbit-planet:focus-visible .planet-label{outline:2px solid var(--vision)}
-    .universe-corona{position:absolute;width:320px;height:320px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,190,90,.5),rgba(237,112,46,.16) 40%,rgba(212,14,140,.06) 58%,transparent 70%);animation:corona 5s ease-in-out infinite alternate}
+    .universe-corona{position:absolute;width:230px;height:230px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,190,90,.5),rgba(237,112,46,.16) 40%,rgba(212,14,140,.06) 58%,transparent 70%);animation:corona 5s ease-in-out infinite alternate}
     @keyframes corona{to{transform:scale(1.12);opacity:.75}}
     .universe-core{background:radial-gradient(circle at 36% 28%,#fff7dd 0,#ffe3a2 7%,#ffb344 18%,#ed702e 39%,#8d3d5d 67%,#1c2045 100%);border-color:rgba(255,216,159,.8);box-shadow:0 0 32px rgba(255,158,58,.65),0 0 90px rgba(242,115,53,.34),inset -12px -18px 35px rgba(22,18,53,.55)}
     .universe-core .text-white{color:#fff!important;text-shadow:0 2px 12px rgba(37,18,46,.6)}
     .universe-core p:last-child{color:rgba(255,255,255,.82)!important}
-    @media(max-width:640px){.universe-corona{width:300px;height:300px}.universe-core{transform:scale(.88)}.planet-ball{width:46px;height:46px}.planet-ball svg{width:20px;height:20px}.orbit-planet{transform-origin:50% 23px}.planet-label small{display:none}}
+    @media(max-width:640px){.universe-corona{width:170px;height:170px}.universe-core{transform:scale(.88)}.planet-ball{width:46px;height:46px}.planet-ball svg{width:20px;height:20px}.orbit-planet{transform-origin:50% 23px}.planet-label small{display:none}}
   </style>
 </head>
 <body class="text-slate-200 antialiased overflow-x-hidden">
@@ -338,8 +338,8 @@
               <div class="universe-orbit o1"></div>
             </div>
             <div class="universe-corona"></div>
-            <div class="universe-core relative z-10 w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full border flex items-center justify-center">
-              <div class="text-center"><i data-lucide="sparkles" class="mx-auto w-7 h-7 text-white"></i><p class="mt-2 text-lg sm:text-xl lg:text-2xl font-black text-white">Core Aurora</p><p class="mt-1 uppercase text-[8px] tracking-wider text-white">Governance Control Plane</p></div>
+            <div class="universe-core relative z-10 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full border flex items-center justify-center">
+              <div class="text-center"><i data-lucide="sparkles" class="mx-auto w-5 h-5 text-white"></i><p class="mt-1 text-sm sm:text-base lg:text-lg font-black leading-tight text-white">Core Aurora</p><p class="mt-0.5 uppercase text-[7px] tracking-wider text-white">Control Plane</p></div>
             </div>
             <button onclick="activateModule('beacon')" class="orbit-planet" data-orbit=".26" data-period="34" data-phase="0.6" style="--c1:#8BE0F7;--c2:#187C9B;--glow:rgba(78,199,234,.6)" aria-label="Beacon: AI Data Quality"><span class="planet-ball"><i data-lucide="badge-check"></i></span><span class="planet-label"><b>Beacon™</b><small>AI Data Quality</small></span></button>
             <button onclick="activateModule('ethos')" class="orbit-planet" data-orbit=".26" data-period="34" data-phase="3.74" style="--c1:#F08BD8;--c2:#B01C87;--glow:rgba(176,28,135,.5)" aria-label="Ethos: Responsible AI"><span class="planet-ball"><i data-lucide="scale"></i></span><span class="planet-label"><b>Ethos™</b><small>Responsible AI</small></span></button>
