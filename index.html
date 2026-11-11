@@ -168,6 +168,21 @@
       50% { translate: 2% -18px; scale: 1.03 1.08; }
       100% { translate: 5% 10px; scale: .98 .94; }
     }
+    .northern-lights{position:absolute;inset:0 0 auto 0;height:62%;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent);mask-image:linear-gradient(to bottom,#000 30%,transparent)}
+    .curtain{position:absolute;top:-6%;height:62%;border-radius:40% 60% 30% 70%/20% 25% 75% 80%;filter:blur(14px);transform-origin:50% 0;-webkit-mask-image:repeating-linear-gradient(90deg,#000 0,rgba(0,0,0,.45) 9px,#000 18px,rgba(0,0,0,.6) 31px,#000 40px);mask-image:repeating-linear-gradient(90deg,#000 0,rgba(0,0,0,.45) 9px,#000 18px,rgba(0,0,0,.6) 31px,#000 40px);animation:curtainSway 16s ease-in-out infinite alternate,curtainGlow 6s ease-in-out infinite alternate}
+    .curtain.c1{left:-10%;width:70%;background:linear-gradient(to bottom,transparent,rgba(46,214,160,.18) 35%,rgba(46,214,160,.5) 72%,rgba(78,199,234,.25) 88%,transparent)}
+    .curtain.c2{left:25%;width:65%;top:-10%;background:linear-gradient(to bottom,transparent,rgba(78,199,234,.16) 35%,rgba(78,199,234,.48) 74%,rgba(89,144,240,.22) 90%,transparent);animation-duration:19s,7s;animation-delay:-4s,-2s}
+    .curtain.c3{left:55%;width:60%;top:-4%;background:linear-gradient(to bottom,transparent,rgba(176,28,135,.12) 40%,rgba(212,14,140,.32) 76%,transparent);animation-duration:22s,8s;animation-delay:-9s,-3s}
+    .curtain.c4{left:5%;width:45%;top:-14%;height:50%;background:linear-gradient(to bottom,transparent,rgba(88,40,115,.22) 70%,transparent);animation-duration:25s,5s;animation-delay:-6s,-1s}
+    @keyframes curtainSway{0%{transform:translateX(-3%) skewX(-12deg) scaleY(.92)}50%{transform:translateX(2%) skewX(-4deg) scaleY(1.06)}100%{transform:translateX(5%) skewX(-14deg) scaleY(.96)}}
+    @keyframes curtainGlow{from{opacity:.55}to{opacity:1}}
+    .sky-star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 6px 2px rgba(89,144,240,.55);animation:twinkle 3.5s ease-in-out infinite alternate}
+    .sky-star.polaris{width:5px;height:5px;box-shadow:0 0 10px 4px rgba(78,199,234,.7),0 0 24px 8px rgba(212,14,140,.2)}
+    .horizon{position:absolute;left:0;right:0;bottom:0;width:100%;height:160px;pointer-events:none}
+    .guide-card{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:18px;background:linear-gradient(120deg,rgba(197,237,250,.55),rgba(248,213,248,.45));border:1px solid rgba(255,255,255,.9);box-shadow:0 10px 30px rgba(88,40,115,.08)}
+    .guide-icon{display:grid;place-items:center;width:40px;height:40px;flex-shrink:0;border-radius:12px;color:#fff;background:linear-gradient(135deg,#2ED6A0,var(--zeal) 45%,var(--hunger));box-shadow:0 0 18px rgba(78,199,234,.45)}
+    .guide-icon svg{animation:compassSpin 8s ease-in-out infinite}
+    @keyframes compassSpin{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(18deg)}}
     .why-chip,.scope-chip{position:relative;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--harmony);background:var(--harmony-lite);border:1px solid rgba(88,40,115,.15)}
     .why-chip{cursor:help;outline:none;transition:background .2s}.why-chip:hover,.why-chip:focus{background:var(--hunger-lite)}
     .why-chip::after{content:attr(data-tip);position:absolute;left:0;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:12px;background:#fff;color:var(--carbon);font-weight:500;font-size:12px;line-height:1.45;box-shadow:0 12px 30px rgba(88,40,115,.18);opacity:0;transform:translateY(-4px);pointer-events:none;transition:.2s;z-index:30}
@@ -298,8 +313,11 @@
   <main>
     <!-- Hero -->
     <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
-      <div class="aurora-ribbon top-[19%]"></div>
-      <div class="aurora-ribbon secondary top-[43%]"></div>
+      <div class="northern-lights" aria-hidden="true">
+        <span class="curtain c1"></span><span class="curtain c2"></span><span class="curtain c3"></span><span class="curtain c4"></span>
+        <span class="sky-star" style="top:12%;left:8%"></span><span class="sky-star" style="top:22%;left:31%;animation-delay:-1.5s"></span><span class="sky-star" style="top:8%;left:52%;animation-delay:-3s"></span><span class="sky-star polaris" style="top:9%;left:44%"></span><span class="sky-star" style="top:16%;left:74%;animation-delay:-2s"></span><span class="sky-star" style="top:27%;left:90%;animation-delay:-.7s"></span>
+      </div>
+      <svg class="horizon" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 140 L120 92 L210 128 L330 62 L450 120 L560 84 L680 132 L800 70 L930 118 L1050 80 L1170 126 L1300 74 L1440 110 L1440 200 L0 200Z" fill="rgba(88,40,115,.07)"/><path d="M0 170 L160 128 L290 160 L420 118 L560 158 L700 122 L850 162 L990 126 L1130 158 L1270 130 L1440 156 L1440 200 L0 200Z" fill="rgba(88,40,115,.11)"/></svg>
       <div class="absolute top-[12%] -left-28 w-[430px] h-[430px] rounded-full bg-indigo-500/16 blur-[100px] animate-drift"></div>
       <div class="absolute top-[9%] right-[-130px] w-[500px] h-[500px] rounded-full bg-cyan-400/11 blur-[120px] animate-drift"></div>
       <div class="absolute bottom-[-220px] left-[35%] w-[600px] h-[500px] rounded-full bg-violet-500/13 blur-[130px]"></div>
@@ -309,7 +327,7 @@
           <h1 class="mt-7 text-5xl sm:text-6xl lg:text-7xl xl:text-[76px] leading-tight font-black gradient-text">Data &amp; AI Unified Governance</h1>
           <p class="mt-5 text-xl font-semibold text-white">Powered by the Aurora Framework</p>
           <p class="mt-7 max-w-2xl text-base sm:text-lg leading-8 text-slate-400">One operating model for trust across data, models, copilots and autonomous agents. Connect policy, risk, evidence and accountability to move from experimentation to controlled production and ongoing operations.</p>
-          <div class="mt-5 flex items-center gap-3 max-w-xl"><span class="h-px w-12 bg-orange-400"></span><p class="text-[10px] sm:text-xs uppercase tracking-[.19em] text-orange-300">Trusted data. Governed metadata. Safer innovation.</p></div>
+          <div class="guide-card mt-6 max-w-xl"><span class="guide-icon"><i data-lucide="compass" class="w-5 h-5"></i></span><div><p class="text-[10px] font-semibold uppercase tracking-[.2em] insight-kicker">Why &ldquo;Aurora&rdquo;</p><p class="mt-1 text-sm leading-6 text-slate-400">For centuries, the Northern Lights have lit the polar sky and guided travellers home. Aurora does the same for data and AI: illuminating what you have, where the risks are, and the path to trusted, autonomous scale.</p></div></div>
           <div class="mt-9 flex flex-col sm:flex-row gap-3">
             <a href="#portfolio" class="group inline-flex justify-center items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#582873] via-[#D40E8C] to-[#ED1944] px-6 py-3.5 text-sm font-bold text-white shadow-cyan hover:brightness-110 hover:-translate-y-0.5 transition">Explore our accelerators<i data-lucide="arrow-down-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition"></i></a>
             <a href="#journey" class="inline-flex justify-center items-center gap-2.5 rounded-xl border border-white/10 bg-white/[.035] px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/[.07] hover:border-white/20 transition"><i data-lucide="layers-3" class="w-4 h-4 text-violet-300"></i>See how it works</a>
