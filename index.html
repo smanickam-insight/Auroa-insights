@@ -168,6 +168,49 @@
       50% { translate: 2% -18px; scale: 1.03 1.08; }
       100% { translate: 5% 10px; scale: .98 .94; }
     }
+    .why-chip,.scope-chip{position:relative;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--harmony);background:var(--harmony-lite);border:1px solid rgba(88,40,115,.15)}
+    .why-chip{cursor:help;outline:none;transition:background .2s}.why-chip:hover,.why-chip:focus{background:var(--hunger-lite)}
+    .why-chip::after{content:attr(data-tip);position:absolute;left:0;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:12px;background:#fff;color:var(--carbon);font-weight:500;font-size:12px;line-height:1.45;box-shadow:0 12px 30px rgba(88,40,115,.18);opacity:0;transform:translateY(-4px);pointer-events:none;transition:.2s;z-index:30}
+    .why-chip:hover::after,.why-chip:focus::after{opacity:1;transform:none}
+    .scope-chip{background:#fff}
+    .q-card{border-radius:18px;border:1px solid rgba(88,40,115,.14);background:rgba(255,255,255,.85);transition:border-color .25s,box-shadow .25s,transform .25s}
+    .q-card:hover{transform:translateX(4px);border-color:rgba(211,12,85,.25)}
+    .q-card[open]{border-color:rgba(211,12,85,.32);box-shadow:0 14px 34px rgba(88,40,115,.12)}
+    .q-card summary,.phase-card summary,.acc summary{display:flex;align-items:center;gap:14px;cursor:pointer;list-style:none}
+    .q-card summary{padding:14px 18px}
+    .q-card summary::-webkit-details-marker,.phase-card summary::-webkit-details-marker,.acc summary::-webkit-details-marker{display:none}
+    .chev{margin-left:auto;flex-shrink:0;transition:transform .25s;color:var(--harmony)}
+    details[open]>summary .chev{transform:rotate(180deg)}
+    .q-answer{padding:0 18px 16px 72px;line-height:1.6;animation:panelIn .35s both}
+    .q-link{display:inline-flex;margin-left:6px;font-weight:700;color:var(--hustle);text-decoration:underline;text-underline-offset:3px}
+    .view-toggle{display:inline-flex;flex-wrap:wrap;padding:4px;border-radius:14px;background:var(--clarity);border:1px solid rgba(88,40,115,.12)}
+    .view-toggle button{padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;color:#756A65;transition:.2s}
+    .view-toggle button.active{background:#fff;color:var(--harmony);box-shadow:0 4px 14px rgba(88,40,115,.14)}
+    .journey-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    @media(min-width:768px){.journey-grid{grid-template-columns:repeat(var(--n),minmax(0,1fr))}}
+    .journey-bar{height:3px;border-radius:3px;background:var(--calm);overflow:hidden}.journey-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--zeal),var(--hunger));transition:width .4s}
+    .detail-in{animation:panelIn .4s both}
+    .step-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600;color:var(--harmony);border:1px solid rgba(88,40,115,.15);background:#fff;transition:.2s}
+    .step-btn:hover:not(:disabled){border-color:var(--hustle);color:var(--hustle)}.step-btn:disabled{opacity:.35;cursor:default}
+    .stat-card{transition:transform .3s}.stat-card:hover{transform:translateY(-4px)}
+    .phase-card summary{padding:20px}
+    .phase-num{display:grid;place-items:center;width:36px;height:36px;flex-shrink:0;border-radius:12px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--harmony),var(--hustle))}
+    .phase-list{padding:0 20px 8px 70px;list-style:disc;font-size:13px;line-height:1.9;color:#675C56}
+    .phase-fit{padding:0 20px 18px 70px;font-size:12px;font-weight:600;color:var(--hustle)}
+    .mini-card{padding:14px;border-radius:14px;border:1px solid rgba(88,40,115,.12);background:rgba(255,255,255,.8)}
+    .mini-card b{display:block;font-size:13px;color:var(--harmony)}.mini-card span{display:block;margin-top:4px;font-size:12px;line-height:1.5;color:#675C56}
+    .acc{border:1px solid rgba(88,40,115,.14);border-radius:16px;background:rgba(255,255,255,.85)}
+    .acc summary{gap:10px;padding:14px 18px;font-size:14px;font-weight:700;color:var(--harmony)}
+    .acc>div{padding:0 18px 18px;animation:panelIn .35s both}
+    .acc .offering-table{min-width:720px}
+    .step-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 8px;border-radius:999px;background:#fff;border:1px solid rgba(88,40,115,.14);color:var(--carbon)}
+    .step-chip b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:12px;color:#fff;background:var(--hustle)}
+    .dot-nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:40;display:none;flex-direction:column;gap:14px}
+    @media(min-width:1024px){.dot-nav{display:flex}}
+    .dot-nav a{position:relative;width:10px;height:10px;border-radius:50%;background:rgba(88,40,115,.22);transition:.25s}
+    .dot-nav a.active{background:var(--hustle);transform:scale(1.35);box-shadow:0 0 0 4px rgba(211,12,85,.15)}
+    .dot-nav a::before{content:attr(data-label);position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:11px;font-weight:600;color:var(--harmony);background:#fff;padding:3px 8px;border-radius:8px;box-shadow:0 4px 12px rgba(88,40,115,.12);opacity:0;transition:.2s;pointer-events:none}
+    .dot-nav a:hover::before,.dot-nav a:focus-visible::before{opacity:1}
 
     @media (prefers-reduced-motion: reduce) { *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important} }
 
@@ -227,12 +270,11 @@
       </a>
       <nav class="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
         <a class="nav-link active px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#home">Overview</a>
-        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#challenge">The Challenge</a>
-        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#platform">Platform</a>
+        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#challenge">Challenge</a>
         <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#portfolio">Portfolio</a>
-        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#autonomy">Autonomy</a>
+        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#journey">How it works</a>
         <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#outcomes">Outcomes</a>
-        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#engagement">Engagement</a>
+        <a class="nav-link px-3.5 py-2 rounded-lg border border-transparent text-xs text-slate-400 hover:text-white transition" href="#engagement">Engage</a>
       </nav>
       <div class="flex items-center gap-2">
         <button onclick="openModal()" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-cyan-300/20 bg-cyan-300/[.07] px-4 py-2.5 text-xs font-semibold text-cyan-100 hover:bg-cyan-300/12 hover:border-cyan-300/40 transition"><i data-lucide="play-circle" class="w-4 h-4"></i>Explore Aurora</button>
@@ -240,10 +282,18 @@
       </div>
     </div>
     <nav id="mobileMenu" class="mobile-menu hidden lg:hidden border-t border-white/[.06] px-4 py-4 bg-night/95 grid grid-cols-2 gap-2">
-      <a href="#engagement" class="p-3 rounded-xl bg-white/[.04] text-sm">Engagement</a>
-      <a href="#home" class="p-3 rounded-xl bg-white/[.04] text-sm">Overview</a><a href="#challenge" class="p-3 rounded-xl bg-white/[.04] text-sm">The Challenge</a><a href="#platform" class="p-3 rounded-xl bg-white/[.04] text-sm">Platform</a><a href="#portfolio" class="p-3 rounded-xl bg-white/[.04] text-sm">Portfolio</a><a href="#autonomy" class="p-3 rounded-xl bg-white/[.04] text-sm">Autonomy</a><a href="#outcomes" class="p-3 rounded-xl bg-white/[.04] text-sm">Outcomes</a><button onclick="openModal()" class="p-3 rounded-xl bg-cyan-300/10 text-cyan-200 text-left text-sm">Explore Aurora</button>
+      <a href="#home" class="p-3 rounded-xl bg-white/[.04] text-sm">Overview</a><a href="#challenge" class="p-3 rounded-xl bg-white/[.04] text-sm">Challenge</a><a href="#portfolio" class="p-3 rounded-xl bg-white/[.04] text-sm">Portfolio</a><a href="#journey" class="p-3 rounded-xl bg-white/[.04] text-sm">How it works</a><a href="#outcomes" class="p-3 rounded-xl bg-white/[.04] text-sm">Outcomes</a><a href="#engagement" class="p-3 rounded-xl bg-white/[.04] text-sm">Engage</a><button onclick="openModal()" class="p-3 rounded-xl bg-cyan-300/10 text-cyan-200 text-left text-sm">Explore Aurora</button>
     </nav>
   </header>
+
+  <nav id="dotNav" class="dot-nav" aria-label="Section navigation">
+    <a href="#home" data-label="Overview" aria-label="Overview"></a>
+    <a href="#challenge" data-label="Challenge" aria-label="Challenge"></a>
+    <a href="#portfolio" data-label="Portfolio" aria-label="Portfolio"></a>
+    <a href="#journey" data-label="How it works" aria-label="How it works"></a>
+    <a href="#outcomes" data-label="Outcomes" aria-label="Outcomes"></a>
+    <a href="#engagement" data-label="Engage" aria-label="Engage"></a>
+  </nav>
 
   <main>
     <!-- Hero -->
@@ -262,7 +312,7 @@
           <div class="mt-5 flex items-center gap-3 max-w-xl"><span class="h-px w-12 bg-orange-400"></span><p class="text-[10px] sm:text-xs uppercase tracking-[.19em] text-orange-300">Trusted data. Governed metadata. Safer innovation.</p></div>
           <div class="mt-9 flex flex-col sm:flex-row gap-3">
             <a href="#portfolio" class="group inline-flex justify-center items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#582873] via-[#D40E8C] to-[#ED1944] px-6 py-3.5 text-sm font-bold text-white shadow-cyan hover:brightness-110 hover:-translate-y-0.5 transition">Explore our accelerators<i data-lucide="arrow-down-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition"></i></a>
-            <a href="#platform" class="inline-flex justify-center items-center gap-2.5 rounded-xl border border-white/10 bg-white/[.035] px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/[.07] hover:border-white/20 transition"><i data-lucide="layers-3" class="w-4 h-4 text-violet-300"></i>See how it works</a>
+            <a href="#journey" class="inline-flex justify-center items-center gap-2.5 rounded-xl border border-white/10 bg-white/[.035] px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/[.07] hover:border-white/20 transition"><i data-lucide="layers-3" class="w-4 h-4 text-violet-300"></i>See how it works</a>
           </div>
           <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
             <div><p class="text-lg font-bold text-white">Trust</p><p class="text-[11px] text-slate-600">Reliable data</p></div>
@@ -302,115 +352,38 @@
     </section>
 
     <!-- Challenge -->
-    <section id="challenge" class="py-24 sm:py-32 border-y border-white/[.055] bg-white/[.012]">
+    <section id="challenge" class="py-20 sm:py-24 border-y border-white/[.055] bg-white/[.012]">
       <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl reveal">
-          <p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">The enterprise reality</p>
-          <h2 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-.04em] text-white">AI opportunity is accelerating.<br><span class="text-slate-500">So is governance complexity.</span></h2>
-          <p class="mt-6 text-base sm:text-lg leading-8 text-slate-400">Data and AI are becoming the intelligence layer of the modern enterprise, shaping decisions, customer experiences, risk management, and competitive advantage. Yet fragmented controls make trust and scale difficult.</p>
-        </div>
-        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-6 mt-12">
-          <div class="glass aurora-border rounded-[26px] p-7 reveal">
-            <p class="text-[10px] uppercase tracking-[.2em] text-cyan-300">The central insight</p>
-            <blockquote class="mt-5 text-2xl sm:text-3xl font-bold leading-tight text-white">“These are not separate technology challenges. They are connected governance challenges.”</blockquote>
-            <div class="mt-8 h-px bg-gradient-to-r from-cyan-300/50 via-violet-400/40 to-transparent"></div>
-            <p class="mt-6 text-sm leading-6 text-slate-500">Aurora establishes one connected model for trust, accountability, visibility, financial control, evidence, and risk.</p>
-          </div>
-          <div class="grid sm:grid-cols-2 gap-4">
-            <article class="question-card rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal"><span class="grid place-items-center w-9 h-9 rounded-xl bg-cyan-400/10 text-cyan-300"><i data-lucide="badge-check" class="w-4.5 h-4.5"></i></span><h3 class="mt-4 font-semibold text-white">Can we trust our data?</h3><p class="mt-2 text-xs leading-5 text-slate-500">Quality, lineage, ownership, and fitness for AI.</p></article>
-            <article class="question-card rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal" style="transition-delay:70ms"><span class="grid place-items-center w-9 h-9 rounded-xl bg-emerald-400/10 text-emerald-300"><i data-lucide="brain-circuit" class="w-4.5 h-4.5"></i></span><h3 class="mt-4 font-semibold text-white">Can we explain AI decisions?</h3><p class="mt-2 text-xs leading-5 text-slate-500">Fairness, transparency, assurance, and accountability.</p></article>
-            <article class="question-card rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal"><span class="grid place-items-center w-9 h-9 rounded-xl bg-violet-400/10 text-violet-300"><i data-lucide="shield" class="w-4.5 h-4.5"></i></span><h3 class="mt-4 font-semibold text-white">Can we innovate safely?</h3><p class="mt-2 text-xs leading-5 text-slate-500">Protected access to useful, privacy-aware data.</p></article>
-            <article class="question-card rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal" style="transition-delay:70ms"><span class="grid place-items-center w-9 h-9 rounded-xl bg-pink-400/10 text-pink-300"><i data-lucide="circle-dollar-sign" class="w-4.5 h-4.5"></i></span><h3 class="mt-4 font-semibold text-white">Can we control AI spend?</h3><p class="mt-2 text-xs leading-5 text-slate-500">Consumption, allocation, optimization, and value.</p></article>
-            <article class="question-card sm:col-span-2 rounded-2xl border border-white/[.08] bg-white/[.025] p-5 reveal"><div class="flex flex-col sm:flex-row gap-4 sm:items-center"><span class="grid place-items-center w-9 h-9 rounded-xl bg-blue-400/10 text-blue-300 shrink-0"><i data-lucide="scan-eye" class="w-4.5 h-4.5"></i></span><div><h3 class="font-semibold text-white">Can we see what happens after deployment?</h3><p class="mt-1 text-xs leading-5 text-slate-500">Continuous visibility into pipelines, models, agents, costs, risks, and operational performance.</p></div></div></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="unified-governance" class="offering-section offering-band">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">What it is</p>
-        <h2>Close the blind spot between data and AI governance.</h2>
-        <p class="offering-intro">Separate committees cannot always see each other's risk. Unify data governance - catalog, quality, lineage and access - with AI governance - risk, fairness, oversight and controls - through one operating model for policy, risk, evidence and accountability.</p>
-        <div class="offering-grid">
-          <article class="offering-item"><h3><i data-lucide="database" class="inline w-5 h-5 mr-2" aria-hidden="true"></i>Data</h3><p>Catalog, quality and lineage establish trust in the information powering AI.</p></article>
-          <article class="offering-item"><h3><i data-lucide="brain-circuit" class="inline w-5 h-5 mr-2" aria-hidden="true"></i>Models</h3><p>Govern model use, risk and explainability with clear ownership and oversight.</p></article>
-          <article class="offering-item"><h3><i data-lucide="messages-square" class="inline w-5 h-5 mr-2" aria-hidden="true"></i>GenAI and copilots</h3><p>Control prompts, grounding and safety so generated answers are appropriate for their context.</p></article>
-          <article class="offering-item"><h3><i data-lucide="bot" class="inline w-5 h-5 mr-2" aria-hidden="true"></i>Autonomous agents</h3><p>Govern identity, permitted actions and kill-switch controls for systems that act on your behalf.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="why-now" class="offering-section">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">Why now</p>
-        <h2>Governance is a growth issue, not only a compliance one.</h2>
-        <p class="offering-intro">Four forces are converging at the same time. The question is no longer whether to govern AI, but how to scale it without recreating risk in every use case.</p>
-        <div class="offering-grid">
-          <article class="offering-item"><h3>AI sprawl</h3><p>Models, copilots, embedded AI and agents are multiplying faster than inventories and ownership.</p></article>
-          <article class="offering-item"><h3>Production bottlenecks</h3><p>Promising apps and agents stall between testing and production when evidence and controls are unclear.</p></article>
-          <article class="offering-item"><h3>Regulatory obligations</h3><p>Risk-based rules, transparency and documentation requirements are becoming operational concerns.</p></article>
-          <article class="offering-item"><h3>Data trust gap</h3><p>Inconsistent definitions, lineage, access and unstructured content constrain AI quality.</p></article>
-        </div>
-        <p class="offering-note"><strong>Buyer trigger:</strong> "How do we scale AI without recreating risk in every use case?"</p>
-        <h3 class="mt-10">Seven challenges, one connected response</h3>
-        <ol class="offering-steps">
-          <li><strong>Data Discovery &amp; Ownership:</strong> nobody knows where critical data lives.</li>
-          <li><strong>Data Quality &amp; Trust:</strong> AI is only as good as the underlying data.</li>
-          <li><strong>Synthetic Data &amp; Safe Access:</strong> sensitive data slows innovation.</li>
-          <li><strong>Responsible AI:</strong> lack of explainability, fairness and assurance.</li>
-          <li><strong>AI FinOps:</strong> uncontrolled AI and agent spend.</li>
-          <li><strong>Observability &amp; Runtime Monitoring:</strong> no visibility after production deployment.</li>
-          <li><strong>Governance Control Plane:</strong> disconnected policies, risk, evidence and accountability.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Platform -->
-    <section id="platform" class="py-24 sm:py-32">
-      <div class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] text-cyan-300">Core Aurora Control Plane</p><h2 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white">One operating model. Every phase governed.</h2><p class="mt-5 text-base sm:text-lg leading-8 text-slate-400">Core Aurora connects data discovery and ownership with common policy, risk, evidence and accountability. The control plane spans all six phases, creating traceable decisions, clear ownership and audit readiness across data and AI.</p></div>
-        <div class="mt-14 glass aurora-border rounded-[30px] p-5 sm:p-8 lg:p-10 reveal overflow-hidden">
-          <div class="grid lg:grid-cols-[1fr_auto_1fr] gap-7 items-center">
-            <div class="space-y-3">
-              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-cyan-400/10 text-cyan-300"><i data-lucide="search" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Data Discovery</p><p class="text-[10px] text-slate-500">Know what exists and where it lives</p></div></div>
-              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-violet-400/10 text-violet-300"><i data-lucide="user-round-check" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Ownership</p><p class="text-[10px] text-slate-500">Clarify stewardship and accountability</p></div></div>
-              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-emerald-400/10 text-emerald-300"><i data-lucide="scroll-text" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Policy &amp; Controls</p><p class="text-[10px] text-slate-500">Turn standards into operating guardrails</p></div></div>
-            </div>
-            <div class="relative grid place-items-center py-8 lg:py-0">
-              <div class="absolute w-64 h-64 rounded-full bg-gradient-to-br from-cyan-400/10 to-violet-500/15 blur-xl animate-pulseSoft"></div>
-              <div class="relative w-52 h-52 sm:w-60 sm:h-60 rounded-full border border-cyan-300/20 grid place-items-center shadow-cyan">
-                <div class="absolute inset-5 rounded-full border border-dashed border-violet-300/20 animate-[spin_22s_linear_infinite]"></div>
-                <div class="relative text-center"><span class="grid place-items-center mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-300/20 to-violet-500/20 border border-cyan-300/20"><i data-lucide="network" class="w-8 h-8 text-cyan-200"></i></span><p class="mt-4 text-xl font-black text-white">Core Aurora</p><p class="mt-1 text-[10px] uppercase text-slate-500">Policy · Risk · Evidence · Accountability</p></div>
-              </div>
-            </div>
-            <div class="space-y-3">
-              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-pink-400/10 text-pink-300"><i data-lucide="triangle-alert" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Risk Management</p><p class="text-[10px] text-slate-500">Identify, prioritize, and mitigate exposure</p></div></div>
-              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-blue-400/10 text-blue-300"><i data-lucide="file-check-2" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Evidence</p><p class="text-[10px] text-slate-500">Demonstrate control effectiveness</p></div></div>
-              <div class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 flex items-center gap-3"><span class="p-2 rounded-xl bg-amber-400/10 text-amber-300"><i data-lucide="landmark" class="w-4 h-4"></i></span><div><p class="text-sm font-semibold text-white">Accountability</p><p class="text-[10px] text-slate-500">Connect decisions to responsible owners</p></div></div>
+        <div class="grid lg:grid-cols-[.85fr_1.15fr] gap-10 items-start">
+          <div class="reveal lg:sticky lg:top-28">
+            <p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">The challenge</p>
+            <h2 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-[-.04em] text-white">AI is accelerating.<br><span class="text-slate-500">So is governance complexity.</span></h2>
+            <p class="mt-5 text-base leading-7 text-slate-400">These are not separate technology challenges. They are connected governance challenges across data, models, copilots and autonomous agents.</p>
+            <p class="mt-6 text-[10px] uppercase tracking-[.2em] text-slate-500">Why now</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="why-chip" tabindex="0" data-tip="Models, copilots, embedded AI and agents multiply faster than inventories and ownership.">AI sprawl</span>
+              <span class="why-chip" tabindex="0" data-tip="Promising apps and agents stall between testing and production when evidence and controls are unclear.">Production bottlenecks</span>
+              <span class="why-chip" tabindex="0" data-tip="Risk-based rules, transparency and documentation requirements are becoming operational concerns.">Regulation</span>
+              <span class="why-chip" tabindex="0" data-tip="Inconsistent definitions, lineage, access and unstructured content constrain AI quality.">Data trust gap</span>
             </div>
           </div>
-          <div class="mt-8 pt-6 border-t border-white/[.065] grid sm:grid-cols-3 gap-4 text-center"><div><p class="text-2xl font-bold text-white">Unified</p><p class="mt-1 text-[11px] text-slate-500">Across data, models, and agents</p></div><div><p class="text-2xl font-bold text-white">Continuous</p><p class="mt-1 text-[11px] text-slate-500">From discovery through runtime</p></div><div><p class="text-2xl font-bold text-white">Evidence-led</p><p class="mt-1 text-[11px] text-slate-500">For confidence and accountability</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Accelerator spotlight -->
-    <section id="accelerators" class="py-24 sm:py-32 border-y border-white/[.055] bg-white/[.012]">
-      <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">Implementation spotlight</p><h2 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-.04em] text-white">Trusted data. Governed metadata. Safer innovation.</h2><p class="mt-5 text-base sm:text-lg leading-8 text-slate-400">Selected implementation capabilities complement the six-asset Aurora offering: AI-powered data quality, MetaUI metadata workflows and SynGen synthetic data generation.</p></div>
-        <div class="grid lg:grid-cols-3 gap-5 mt-12">
-          <article class="glass glass-hover aurora-border rounded-[26px] p-7 reveal"><span class="grid place-items-center w-12 h-12 rounded-2xl bg-[#C5EDFA] text-[#187C9B]"><i data-lucide="badge-check" class="w-6 h-6"></i></span><p class="mt-6 text-[10px] uppercase tracking-[.2em] text-[#D30C55]">AI-Powered Data Quality</p><h3 class="mt-2 text-2xl font-bold text-white">Build trust into every data product.</h3><p class="mt-4 text-sm leading-6 text-slate-400">Profile, validate, cleanse, score, and monitor enterprise data through an AI-assisted, metadata-driven quality framework.</p><ul class="mt-5 space-y-2 text-xs text-slate-500"><li>• Automated profiling and reusable quality rules</li><li>• Quality scoring, anomaly identification, and reconciliation</li><li>• Audit, monitoring, and human-in-the-loop governance</li></ul></article>
-          <article class="glass glass-hover aurora-border rounded-[26px] p-7 reveal" style="transition-delay:70ms"><span class="grid place-items-center w-12 h-12 rounded-2xl bg-[#E8DAFF] text-[#582873]"><i data-lucide="message-square-code" class="w-6 h-6"></i></span><p class="mt-6 text-[10px] uppercase tracking-[.2em] text-[#D40E8C]">MetaUI</p><h3 class="mt-2 text-2xl font-bold text-white">Metadata becomes actionable.</h3><p class="mt-4 text-sm leading-6 text-slate-400">Turn natural-language intent into validated, reviewable, and governed metadata proposals across connected Fabric and Databricks environments.</p><ul class="mt-5 space-y-2 text-xs text-slate-500"><li>• Context-aware metadata proposals</li><li>• Row-level review and explicit human approval</li><li>• Discovery, lineage, quality context, and change history</li></ul></article>
-          <article class="glass glass-hover aurora-border rounded-[26px] p-7 reveal" style="transition-delay:140ms"><span class="grid place-items-center w-12 h-12 rounded-2xl bg-[#D0E2FF] text-[#356FCB]"><i data-lucide="gem" class="w-6 h-6"></i></span><p class="mt-6 text-[10px] uppercase tracking-[.2em] text-[#5990F0]">SynGen</p><h3 class="mt-2 text-2xl font-bold text-white">Generate realistic data, not another production copy.</h3><p class="mt-4 text-sm leading-6 text-slate-400">Create schema-aware, relationship-consistent, and reusable synthetic datasets for engineering, QA, analytics, demonstrations, and AI.</p><ul class="mt-5 space-y-2 text-xs text-slate-500"><li>• Dependency-aware, configurable generation</li><li>• Controlled negative testing and quality feedback</li><li>• Reusable jobs, previews, exports, and APIs</li></ul></article>
+          <div class="grid gap-3 reveal">
+            <p class="text-sm text-slate-500">Select a question to see how Aurora answers it.</p>
+            <details class="q-card" name="questions" open><summary><span class="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-[#E8DAFF] text-[#582873]"><i data-lucide="network" class="w-5 h-5"></i></span><span><b class="block text-white">Who owns what, and under which policy?</b><small class="text-xs text-slate-500">Discovery, ownership, policy, risk and evidence.</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div class="q-answer text-sm text-slate-400"><strong class="text-white">Core Aurora</strong> builds the data and AI inventory, assigns accountable owners and connects common policy, risk, evidence and audit readiness across every phase. <button onclick="activateModule('core')" class="q-link">Explore Core Aurora</button></div></details>
+            <details class="q-card" name="questions"><summary><span class="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-[#C5EDFA] text-[#187C9B]"><i data-lucide="badge-check" class="w-5 h-5"></i></span><span><b class="block text-white">Can we trust our data?</b><small class="text-xs text-slate-500">Quality, lineage, ownership and fitness for AI.</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div class="q-answer text-sm text-slate-400"><strong class="text-white">Beacon™</strong> profiles, validates, scores and monitors every data product with AI-assisted, metadata-driven rules and human review. <button onclick="activateModule('beacon')" class="q-link">Explore Beacon</button></div></details>
+            <details class="q-card" name="questions"><summary><span class="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-[#E8DAFF] text-[#582873]"><i data-lucide="shield" class="w-5 h-5"></i></span><span><b class="block text-white">Can we innovate safely?</b><small class="text-xs text-slate-500">Useful, privacy-aware data without production copies.</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div class="q-answer text-sm text-slate-400"><strong class="text-white">Prism™</strong> generates realistic, relationship-consistent synthetic data (SynGen), and MetaUI turns intent into reviewed, governed metadata. <button onclick="activateModule('prism')" class="q-link">Explore Prism</button></div></details>
+            <details class="q-card" name="questions"><summary><span class="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-[#F8D5F8] text-[#B01C87]"><i data-lucide="brain-circuit" class="w-5 h-5"></i></span><span><b class="block text-white">Can we explain AI decisions?</b><small class="text-xs text-slate-500">Fairness, transparency, assurance and accountability.</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div class="q-answer text-sm text-slate-400"><strong class="text-white">Ethos™</strong> operationalizes Responsible AI with risk assessment, explainability and fairness review, human oversight and assurance evidence. <button onclick="activateModule('ethos')" class="q-link">Explore Ethos</button></div></details>
+            <details class="q-card" name="questions"><summary><span class="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-[#F8D5F8] text-[#D30C55]"><i data-lucide="circle-dollar-sign" class="w-5 h-5"></i></span><span><b class="block text-white">Can we control AI spend?</b><small class="text-xs text-slate-500">Consumption, allocation, optimization and value.</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div class="q-answer text-sm text-slate-400"><strong class="text-white">Pulse™</strong> brings FinOps to AI and agents: token economics, cost allocation, utilization and ROI tracking. <button onclick="activateModule('pulse')" class="q-link">Explore Pulse</button></div></details>
+            <details class="q-card" name="questions"><summary><span class="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-[#D0E2FF] text-[#356FCB]"><i data-lucide="scan-eye" class="w-5 h-5"></i></span><span><b class="block text-white">Can we see what happens after deployment?</b><small class="text-xs text-slate-500">Pipelines, models, agents, costs and risk in production.</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div class="q-answer text-sm text-slate-400"><strong class="text-white">Insight™</strong> extends governance into production with runtime monitoring, lineage, drift and incident detection. <button onclick="activateModule('insight')" class="q-link">Explore Insight</button></div></details>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="py-24 sm:py-32 border-y border-white/[.055] bg-white/[.012]">
+    <section id="portfolio" class="py-20 sm:py-24">
       <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">The Aurora portfolio</p><h2 class="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white">Six assets. One connected governance fabric.</h2><p class="mt-5 text-base sm:text-lg leading-8 text-slate-400">Core Aurora provides discovery, ownership and the common control plane. Five connected accelerators deliver data trust, safe access, Responsible AI, AI FinOps and runtime observability.</p></div>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal"><div class="max-w-3xl"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">The Aurora portfolio</p><h2 class="mt-4 text-3xl sm:text-5xl font-extrabold text-white">Six assets. One governance fabric.</h2><p class="mt-4 text-base leading-7 text-slate-400">Core Aurora is the common control plane; five accelerators deliver trust, safe access, Responsible AI, FinOps and observability.</p></div><div class="flex flex-wrap gap-2"><span class="scope-chip"><i data-lucide="database" class="w-3.5 h-3.5"></i>Data</span><span class="scope-chip"><i data-lucide="brain-circuit" class="w-3.5 h-3.5"></i>Models</span><span class="scope-chip"><i data-lucide="messages-square" class="w-3.5 h-3.5"></i>GenAI &amp; copilots</span><span class="scope-chip"><i data-lucide="bot" class="w-3.5 h-3.5"></i>Agents</span></div></div>
         <div class="mt-10 grid lg:grid-cols-[310px_1fr] gap-5">
           <div class="space-y-2 reveal" id="moduleTabs">
             <button data-module="core" onclick="selectModule('core')" class="module-tab active w-full flex items-center gap-3 rounded-2xl border border-transparent p-4 text-left text-slate-400 transition"><span class="module-dot w-2.5 h-2.5 rounded-full bg-cyan-300 text-cyan-300"></span><span class="flex-1"><b class="block text-sm">Core Aurora</b><small class="text-[10px] text-slate-600">Discovery &amp; Governance Control Plane</small></span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
@@ -427,211 +400,103 @@
       </div>
     </section>
 
-    <!-- Lifecycle -->
-    <section class="py-24 sm:py-32">
+    <!-- Journey -->
+    <section id="journey" class="py-20 sm:py-24 border-y border-white/[.055] bg-white/[.012]">
       <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] text-cyan-300">The governance journey</p><h2 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-[-.04em] text-white">From discovery to enterprise scale.</h2><p class="mt-5 text-slate-400">Select a stage to see how Aurora continuously governs the Data and AI lifecycle.</p></div>
-        <div class="mt-12 glass rounded-[26px] p-5 sm:p-8 reveal">
-          <div id="journeyNodes" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2"></div>
-          <div id="journeyDetail" class="mt-7 rounded-2xl border border-white/[.07] bg-black/15 p-6"></div>
-          <p class="mt-6 text-sm text-slate-400"><strong class="text-white">Govern every phase: Core Aurora Control Plane.</strong> One operating model for policy, risk, accountability, evidence and audit readiness.</p>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal">
+          <div class="max-w-2xl"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">How it works</p><h2 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-[-.04em] text-white">One journey. Three lenses.</h2><p class="mt-4 text-base leading-7 text-slate-400">Switch the lens, then step through it.</p></div>
+          <div class="view-toggle" role="tablist" aria-label="Journey lens">
+            <button role="tab" data-view="lifecycle" class="active" aria-selected="true">Lifecycle</button>
+            <button role="tab" data-view="autonomy" aria-selected="false">Autonomy levels</button>
+            <button role="tab" data-view="framework" aria-selected="false">Framework</button>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="autonomy" class="offering-section offering-band">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">Autonomy journey</p>
-        <h2>Progress through five levels, not one big bang.</h2>
-        <p class="offering-intro">Target state: end-to-end autonomous data operations with policy-based governance. Each workflow moves up a level only when its measured evidence supports it.</p>
-        <ol class="offering-steps">
-          <li><strong>Level 1 &ndash; Manual:</strong> people-driven provisioning and troubleshooting.</li>
-          <li><strong>Level 2 &ndash; Automated:</strong> standardized, metadata-driven pipelines and testing, with quality gates and approved reruns.</li>
-          <li><strong>Level 3 &ndash; Intelligent:</strong> predictive monitoring and AI diagnostics, run in shadow mode first with engineers confirming every alert.</li>
-          <li><strong>Level 4 &ndash; Autonomous:</strong> self-healing and dynamic optimization for approved, low-risk fixes within retry limits and guardrails.</li>
-          <li><strong>Level 5 &ndash; Zero-touch:</strong> routine incidents close without a ticket; people handle exceptions only, with a tested kill switch.</li>
-        </ol>
-        <h3 class="mt-10">Aurora powers every step</h3>
-        <div class="offering-table-wrap" role="region" aria-label="Aurora assets by autonomy level" tabindex="0">
-          <table class="offering-table">
-            <thead><tr><th scope="col">Asset</th><th scope="col">1 &rarr; 2</th><th scope="col">2 &rarr; 3</th><th scope="col">3 &rarr; 4</th><th scope="col">4 &rarr; 5</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Core Aurora</th><td>Discovery, owner and policy for each data product</td><td>Evidence and accountability for every alert</td><td>Policy gates decide which actions run unattended</td><td>Agent identity, permitted actions, kill switch</td></tr>
-              <tr><th scope="row">Beacon&trade;</th><td>Profiling, auto-generated rules, quality score</td><td>ML anomaly, drift and AI diagnostics</td><td>Remediation suggestions for low-risk fixes</td><td>Quality gates across all data products</td></tr>
-              <tr><th scope="row">Insight&trade;</th><td>Run logs and audit history</td><td>Lineage and runtime monitoring</td><td>Measures self-heal outcomes</td><td>Exception-only alerting</td></tr>
-              <tr><th scope="row">Pulse&trade;</th><td>Cost tagged per pipeline</td><td>Cost per run and per dataset</td><td>Dynamic cost optimization</td><td>Spend per autonomous workflow</td></tr>
-              <tr><th scope="row">Ethos&trade;</th><td>&ndash;</td><td>Explainable alerts and diagnostics</td><td>Guardrails on AI-driven actions</td><td>Assurance and release gates</td></tr>
-              <tr><th scope="row">Prism&trade; and MetaUI</th><td>Synthetic test data; reviewed metadata</td><td>Test data to validate alerts</td><td>Test self-healing safely before release</td><td>Governed self-service data requests</td></tr>
-            </tbody>
-          </table>
+        <div class="mt-8 glass rounded-[26px] p-5 sm:p-8 reveal">
+          <p id="journeyIntro" class="text-sm leading-6 text-slate-400"></p>
+          <div id="journeyNodes" class="journey-grid mt-5"></div>
+          <div class="journey-bar mt-4"><span id="journeyBar"></span></div>
+          <div id="journeyDetail" class="mt-6 rounded-2xl border border-white/[.07] bg-black/15 p-6 min-h-[220px]" aria-live="polite"></div>
+          <div class="mt-5 flex items-center justify-between">
+            <button id="journeyPrev" class="step-btn" aria-label="Previous step"><i data-lucide="arrow-left" class="w-4 h-4"></i>Previous</button>
+            <button id="journeyNext" class="step-btn" aria-label="Next step">Next<i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+          </div>
         </div>
-        <h3 class="mt-10">Metrics that prove each level</h3>
-        <div class="offering-grid mt-6">
-          <article class="offering-item"><h3>Reliability</h3><p>Recurring-failure index against an agreed baseline, and the share of priority data products under a quality gate.</p></article>
-          <article class="offering-item"><h3>Early detection</h3><p>Issues caught before a user ticket, with alert precision and useful warning time reported monthly.</p></article>
-          <article class="offering-item"><h3>Service performance</h3><p>Same-month ticket closure and recoverable failures fixed without a human touch.</p></article>
-          <article class="offering-item"><h3>Capacity released</h3><p>Engineering hours redirected each month from routine operations to higher-value work.</p></article>
-        </div>
-        <p class="offering-note"><strong>How we start:</strong> prove Level 2 in a 90-day pilot &ndash; a connector baseline on one data product, a freshness and volume gate in shadow mode, and a compliance evidence pack with cost metering on one dataset &ndash; then review against exit criteria every quarter. Levels and targets are indicative and re-set from pilot data.</p>
-      </div>
-    </section>
-
-    <section id="framework" class="offering-section offering-band">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">Enterprise framework</p>
-        <h2>From data governance to business-aware AI.</h2>
-        <p class="offering-intro">Trusted, business-aware AI combines governance, semantics and enterprise knowledge. Five connected framework dimensions support the six-phase delivery journey.</p>
-        <div class="offering-grid">
-          <article class="offering-item"><h3>Govern: define the rules</h3><p>Establish an AI Governance Board, responsible AI policies, risk classification, regulatory compliance and human oversight.</p></article>
-          <article class="offering-item"><h3>Understand: give data business meaning</h3><p>Connect data, information and knowledge to canonical models, a common business vocabulary, ontologies and intelligence. Metadata management, discovery, catalogs, lineage, knowledge graphs and semantics help AI understand the business, not just the data.</p></article>
-          <article class="offering-item"><h3>Trust: prove reliability</h3><p>Beacon supports profiling, validation and quality; Ethos supports bias, fairness, explainability and risk assessments; Insight supports observability, lineage, traceability and performance monitoring.</p></article>
-          <article class="offering-item"><h3>Operate: govern the full AI lifecycle</h3><p>Ideate → Design → Build → Validate → Deploy → Monitor → Retire. Maintain model cards, risk assessments, approval records, audit trails and compliance reports throughout delivery.</p></article>
-          <article class="offering-item"><h3>Optimize: measure value and economics</h3><p>Pulse connects AI FinOps, token economics, cost allocation, model utilization, ROI tracking and business value realization.</p></article>
-          <article class="offering-item"><h3>Strategic outcome</h3><p>Data governance, canonical models, ontologies, Responsible AI and AI FinOps combine to enable trusted, explainable, business-aware AI: better decisions, improved trust, faster adoption and higher business value.</p></article>
-        </div>
-        <p class="offering-note"><strong>Framework alignment:</strong> EU AI Act, NIST AI RMF, India AI governance guidelines, ISO/IEC 42001, applicable data protection laws including GDPR and DPDP, and industry-specific requirements. Alignment supports evidence gathering; it does not itself establish certification or legal compliance.</p>
-      </div>
-    </section>
-
-    <section id="production-example" class="offering-section">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">Illustrative production pattern</p>
-        <h2>Move a GenAI knowledge assistant into production.</h2>
-        <p class="offering-intro">The same six phases applied to one use case, with a clear control outcome at every step. This example illustrates the approach, rather than verified results from a named customer.</p>
-        <div class="offering-table-wrap" role="region" aria-label="GenAI production example" tabindex="0">
-          <table class="offering-table">
-            <thead><tr><th scope="col">Phase / asset</th><th scope="col">Action</th><th scope="col">Control outcome</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Discover / Core Aurora</th><td>Register the use case, data sources and a named accountable owner.</td><td>Ownership resolved in days, without repeated ownership queries.</td></tr>
-              <tr><th scope="row">Trust / Beacon</th><td>Classify risk and curate authoritative, deduplicated retrieval sources.</td><td>Retrieval grounded in vetted content only.</td></tr>
-              <tr><th scope="row">Enable / Prism</th><td>Enforce access controls so sensitive content does not reach the assistant.</td><td>No sensitive-data exposure found in testing.</td></tr>
-              <tr><th scope="row">Assure / Ethos</th><td>Run groundedness, safety and privacy tests before release.</td><td>An evidence-backed release gate, not a guess.</td></tr>
-              <tr><th scope="row">Optimize / Pulse</th><td>Instrument usage and cost telemetry from day one.</td><td>Cost per query visible before it becomes a budget problem.</td></tr>
-              <tr><th scope="row">Monitor / Insight</th><td>Build continuous monitoring and an incident workflow into production.</td><td>Drift detected and remediated before customer impact.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="offering-note"><strong>Result:</strong> an approved production pattern with reusable controls for the next assistant, not a one-off fix. Outcomes depend on implementation, testing and operating conditions.</p>
       </div>
     </section>
 
     <!-- Outcomes -->
-    <section id="outcomes" class="py-24 sm:py-32 border-y border-white/[.055] bg-white/[.012]">
+    <section id="outcomes" class="py-20 sm:py-24">
       <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-end">
-          <div class="reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">Business outcomes</p><h2 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-[-.04em] text-white">Governance designed to unlock value.</h2><p class="mt-5 text-base leading-7 text-slate-400">Aurora transforms governance from a reactive compliance exercise into a proactive business capability for confident innovation.</p></div>
-          <div class="grid sm:grid-cols-3 gap-4 reveal">
-            <div class="glass rounded-2xl p-5"><i data-lucide="rocket" class="w-5 h-5 text-cyan-300"></i><p class="mt-5 text-2xl font-bold text-white">Faster</p><p class="mt-1 text-xs text-slate-500">Innovation with guardrails</p></div>
-            <div class="glass rounded-2xl p-5"><i data-lucide="shield-check" class="w-5 h-5 text-emerald-300"></i><p class="mt-5 text-2xl font-bold text-white">Safer</p><p class="mt-1 text-xs text-slate-500">Risk-aware adoption</p></div>
-            <div class="glass rounded-2xl p-5"><i data-lucide="trending-up" class="w-5 h-5 text-violet-300"></i><p class="mt-5 text-2xl font-bold text-white">Smarter</p><p class="mt-1 text-xs text-slate-500">Value-led investment</p></div>
+        <div class="max-w-3xl reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">Outcomes</p><h2 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-[-.04em] text-white">Governance designed to unlock value.</h2><p class="mt-4 text-base leading-7 text-slate-400">What governed could look like six months in.</p></div>
+        <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+          <div class="stat-card glass rounded-2xl p-6"><p class="metric text-4xl sm:text-5xl font-black gradient-text"><span data-count="3">0</span>×</p><p class="mt-2 text-sm text-slate-400">Faster time-to-production for governed AI use cases</p></div>
+          <div class="stat-card glass rounded-2xl p-6"><p class="metric text-4xl sm:text-5xl font-black gradient-text"><span data-count="0" data-from="12">12</span></p><p class="mt-2 text-sm text-slate-400">Unresolved audit findings at the next board review</p></div>
+          <div class="stat-card glass rounded-2xl p-6"><p class="metric text-4xl sm:text-5xl font-black gradient-text"><span data-count="30">0</span>%</p><p class="mt-2 text-sm text-slate-400">Lower AI cost per approved workload</p></div>
+          <div class="stat-card glass rounded-2xl p-6"><p class="metric text-4xl sm:text-5xl font-black gradient-text"><span data-count="100">0</span>%</p><p class="mt-2 text-sm text-slate-400">Of high-risk AI assets owned and monitored</p></div>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-2 reveal">
+          <span class="why-chip" tabindex="0" data-tip="Improve confidence in the information that powers analytics, automation and AI.">Data trust</span>
+          <span class="why-chip" tabindex="0" data-tip="Enable development and experimentation without exposing sensitive information.">Safe innovation</span>
+          <span class="why-chip" tabindex="0" data-tip="Operationalize transparency, assurance, human accountability and fairness.">Responsible AI</span>
+          <span class="why-chip" tabindex="0" data-tip="Connect AI and agent consumption to ownership, optimization and business value.">Cost transparency</span>
+          <span class="why-chip" tabindex="0" data-tip="Continuously monitor the performance, behavior and risk of production systems.">Production visibility</span>
+          <span class="why-chip" tabindex="0" data-tip="Create traceable evidence and accountability across governance decisions.">Regulatory readiness</span>
+        </div>
+        <p class="mt-5 text-[11px] text-slate-500">Illustrative figures, not verified customer results, contractual commitments or guaranteed outcomes. Baselines and targets are agreed during Assess &amp; Design.</p>
+      </div>
+    </section>
+
+    <!-- Engagement -->
+    <section id="engagement" class="py-20 sm:py-24 border-t border-white/[.055] bg-white/[.012]">
+      <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl reveal"><p class="text-xs font-semibold uppercase tracking-[.25em] insight-kicker">Engage</p><h2 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-[-.04em] text-white">Start with one use case. Scale on evidence.</h2><p class="mt-4 text-base leading-7 text-slate-400">Enter where urgency is highest and expand without restarting the governance design.</p></div>
+        <div class="mt-10 grid md:grid-cols-3 gap-4 items-start reveal">
+          <details class="phase-card glass rounded-2xl" name="phases" open><summary><span class="phase-num">1</span><span><b class="block text-lg text-white">Assess &amp; Design</b><small class="text-xs text-slate-500">4–6 weeks · fixed fee</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><ul class="phase-list"><li>Maturity and risk assessment</li><li>Data and AI asset landscape scan</li><li>Lighthouse use-case selection</li><li>Governance blueprint and roadmap</li></ul><p class="phase-fit">Best for limited visibility or stalled pilots.</p></details>
+          <details class="phase-card glass rounded-2xl" name="phases"><summary><span class="phase-num">2</span><span><b class="block text-lg text-white">Implement</b><small class="text-xs text-slate-500">12–20 weeks · per accelerator or bundled</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><ul class="phase-list"><li>Operating model and control library</li><li>1–3 Aurora accelerators stood up</li><li>Technical integration into your stack</li><li>Production assurance patterns</li></ul><p class="phase-fit">Best for scaling AI into production.</p></details>
+          <details class="phase-card glass rounded-2xl" name="phases"><summary><span class="phase-num">3</span><span><b class="block text-lg text-white">Operate</b><small class="text-xs text-slate-500">Ongoing · monthly managed service</small></span><i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><ul class="phase-list"><li>Continuous monitoring and evidence</li><li>Exceptions and incident response</li><li>Governance reporting cadence</li><li>Quarterly control improvement</li></ul><p class="phase-fit">Best for a recurring governance capability.</p></details>
+        </div>
+        <div class="mt-4 rounded-2xl border border-white/[.08] bg-white/[.025] p-5 flex gap-4 items-start reveal"><span class="grid place-items-center w-10 h-10 shrink-0 rounded-xl bg-[#F8D5F8] text-[#D30C55]"><i data-lucide="flask-conical" class="w-5 h-5"></i></span><p class="text-sm leading-6 text-slate-400"><strong class="text-white">Prove it in 90 days.</strong> A connector baseline on one data product, a freshness and volume gate in shadow mode, and a compliance evidence pack with cost metering on one dataset — then a quarterly review against exit criteria.</p></div>
+        <div class="mt-10 grid lg:grid-cols-2 gap-6 reveal">
+          <div>
+            <p class="text-[10px] uppercase tracking-[.2em] text-slate-500">Why Insight</p>
+            <div class="mt-3 grid sm:grid-cols-2 gap-3">
+              <div class="mini-card"><b>Unified, not siloed</b><span>Data trust, model risk, GenAI, agents and FinOps in one proposition.</span></div>
+              <div class="mini-card"><b>Tool-agnostic</b><span>Works with Microsoft, Databricks, Snowflake and your governance stack.</span></div>
+              <div class="mini-card"><b>Accelerator-led</b><span>Reuse assessments, control libraries, dashboards and playbooks.</span></div>
+              <div class="mini-card"><b>Through operations</b><span>Strategy, implementation and managed governance in one team.</span></div>
+            </div>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-[.2em] text-slate-500">Details on demand</p>
+            <div class="mt-3 space-y-3">
+              <details class="acc"><summary><i data-lucide="globe-2" class="w-4 h-4"></i>Regulatory readiness mapping<i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div>
+                <p class="text-xs text-slate-500">Indicative only: not legal advice or a guarantee of compliance. Applicability and dates must be confirmed with your legal and compliance teams.</p>
+                <div class="offering-table-wrap" role="region" aria-label="Indicative regulatory and framework mapping" tabindex="0">
+                  <table class="offering-table text-xs">
+                    <thead><tr><th scope="col">Building block</th><th scope="col">EU AI Act</th><th scope="col">India: DPDP Act</th><th scope="col">United States</th><th scope="col">Australia</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">Data Discovery &amp; Ownership</th><td>Data governance and documentation (Arts. 10, 11).</td><td>Purpose limitation, data mapping and applicable Significant Data Fiduciary duties.</td><td>NIST AI RMF: Map; applicable CPRA inventory obligations.</td><td>AI adoption accountability guidance; privacy record-keeping.</td></tr>
+                      <tr><th scope="row">Data Quality &amp; Trust</th><td>Training and input data governance and accuracy (Art. 10).</td><td>Personal data accuracy obligations (Sec. 8(3)).</td><td>NIST AI RMF: Measure; applicable CPRA accuracy requirements.</td><td>APP 10 data quality; risk-management practices.</td></tr>
+                      <tr><th scope="row">Synthetic Data &amp; Safe Access</th><td>Representative data and bias mitigation (Art. 10).</td><td>Security safeguards and applicable cross-border processing requirements.</td><td>Data minimization and sector-specific de-identification requirements.</td><td>APP 6/8 use and cross-border disclosure; impact assessments.</td></tr>
+                      <tr><th scope="row">Responsible AI</th><td>Risk management, transparency and human oversight (Arts. 9, 13, 14).</td><td>Evidence supporting applicable processing and grievance-redress duties.</td><td>NIST AI RMF: Govern/Manage; applicable state automated-decision requirements.</td><td>Transparency and human-oversight practices.</td></tr>
+                      <tr><th scope="row">AI FinOps</th><td>Operational evidence supporting post-market monitoring (Art. 72).</td><td>Evidence supporting accountability for applicable processing activities.</td><td>NIST AI RMF: Manage, including resourcing and oversight.</td><td>Accountability and governance practices.</td></tr>
+                      <tr><th scope="row">Observability &amp; Runtime Monitoring</th><td>Logging and post-market monitoring (Arts. 12, 72).</td><td>Personal data breach detection and notification (Sec. 8(6)).</td><td>NIST AI RMF: Measure/Manage; state breach-notification requirements.</td><td>Testing and monitoring; applicable privacy breach notification.</td></tr>
+                      <tr><th scope="row">Governance Control Plane</th><td>Risk management and conformity evidence (Arts. 9, 43, 47).</td><td>Applicable DPIA, audit and DPO duties; Data Principal rights workflows.</td><td>Full NIST AI RMF cycle; applicable state deployer duties.</td><td>AI adoption guidance and applicable automated-decision transparency duties.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="mt-3 text-xs text-slate-500">Voluntary frameworks and legislation are not interchangeable. Synthetic data does not automatically remove privacy obligations; AI FinOps evidence does not independently satisfy regulatory duties.</p>
+              </div></details>
+              <details class="acc"><summary><i data-lucide="book-check" class="w-4 h-4"></i>Framework alignment<i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div><p class="text-sm leading-6 text-slate-400">EU AI Act, NIST AI RMF, India AI governance guidelines, ISO/IEC 42001, applicable data protection laws including GDPR and DPDP, and industry-specific requirements. Alignment supports evidence gathering; it does not itself establish certification or legal compliance.</p></div></details>
+              <details class="acc"><summary><i data-lucide="receipt-text" class="w-4 h-4"></i>Scope, timing and pricing<i data-lucide="chevron-down" class="chev w-4 h-4"></i></summary><div><p class="text-sm leading-6 text-slate-400">Indicative only. Scope, timing and pricing are agreed during Assess &amp; Design based on the domains, use cases and platforms in scope.</p></div></details>
+            </div>
           </div>
         </div>
-        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
-          <article class="glass glass-hover rounded-2xl p-6 reveal"><span class="text-[10px] uppercase tracking-[.19em] text-cyan-300">01</span><h3 class="mt-4 font-semibold text-white">Increased Data Trust</h3><p class="mt-2 text-sm leading-6 text-slate-500">Improve confidence in the information that powers analytics, automation, and AI.</p></article>
-          <article class="glass glass-hover rounded-2xl p-6 reveal" style="transition-delay:60ms"><span class="text-[10px] uppercase tracking-[.19em] text-violet-300">02</span><h3 class="mt-4 font-semibold text-white">Faster Safe Innovation</h3><p class="mt-2 text-sm leading-6 text-slate-500">Enable development and experimentation without exposing sensitive information.</p></article>
-          <article class="glass glass-hover rounded-2xl p-6 reveal" style="transition-delay:120ms"><span class="text-[10px] uppercase tracking-[.19em] text-emerald-300">03</span><h3 class="mt-4 font-semibold text-white">Responsible AI Adoption</h3><p class="mt-2 text-sm leading-6 text-slate-500">Operationalize transparency, assurance, human accountability, and fairness.</p></article>
-          <article class="glass glass-hover rounded-2xl p-6 reveal"><span class="text-[10px] uppercase tracking-[.19em] text-pink-300">04</span><h3 class="mt-4 font-semibold text-white">Cost Transparency</h3><p class="mt-2 text-sm leading-6 text-slate-500">Connect AI and agent consumption to ownership, optimization, and business value.</p></article>
-          <article class="glass glass-hover rounded-2xl p-6 reveal" style="transition-delay:60ms"><span class="text-[10px] uppercase tracking-[.19em] text-blue-300">05</span><h3 class="mt-4 font-semibold text-white">Production Visibility</h3><p class="mt-2 text-sm leading-6 text-slate-500">Continuously monitor the performance, behavior, and risk of production systems.</p></article>
-          <article class="glass glass-hover rounded-2xl p-6 reveal" style="transition-delay:120ms"><span class="text-[10px] uppercase tracking-[.19em] text-amber-300">06</span><h3 class="mt-4 font-semibold text-white">Regulatory Readiness</h3><p class="mt-2 text-sm leading-6 text-slate-500">Create traceable evidence and accountability across governance decisions.</p></article>
+        <div id="next-steps" class="mt-12 glass aurora-border rounded-[28px] p-7 sm:p-10 text-center reveal">
+          <h2 class="text-2xl sm:text-4xl font-black tracking-[-.03em] text-white">Governance is not a control function. <span class="gradient-text">It is a growth enabler.</span></h2>
+          <div class="mt-6 flex flex-wrap justify-center gap-2 text-sm"><span class="step-chip"><b>1</b>Select a lighthouse use case</span><span class="step-chip"><b>2</b>Run a maturity and risk workshop</span><span class="step-chip"><b>3</b>Agree control outcomes and a roadmap</span></div>
+          <p class="mt-6 font-semibold text-white">Govern with confidence. Scale with trust. Transform with Insight.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="six-month-outlook" class="offering-section offering-band">
-      <div class="offering-wrap">
-        <h2>What governed could look like six months in.</h2>
-        <p class="offering-intro">An indicative view of a governed, board-ready capability. These figures are illustrative, not verified customer results, contractual commitments or guaranteed outcomes.</p>
-        <div class="offering-metrics">
-          <div><strong>3×</strong><span>Faster time-to-production for governed AI use cases.</span></div>
-          <div><strong>0</strong><span>Unresolved audit findings at the next board review.</span></div>
-          <div><strong>30%</strong><span>Lower AI cost per approved workload.</span></div>
-          <div><strong>100%</strong><span>Of high-risk AI assets owned and monitored.</span></div>
-        </div>
-        <p class="offering-note">Agree baselines, measurement methods, scope and achievable targets during Assess &amp; Design. Aurora aims to give leaders a clear governance story for their board, regulators and customers.</p>
-      </div>
-    </section>
-
-    <section id="engagement" class="offering-section">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">What you get</p>
-        <h2>A phased engagement, scaled to your risk.</h2>
-        <p class="offering-intro">Enter where urgency is highest. Expand without restarting the governance design, with concrete artifacts and a delivery scope matched to your domains, use cases and platforms.</p>
-        <div class="offering-table-wrap" role="region" aria-label="Engagement phases and deliverables" tabindex="0">
-          <table class="offering-table">
-            <thead><tr><th scope="col">Stage</th><th scope="col">Duration and model</th><th scope="col">Deliverables</th><th scope="col">Best for</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Assess &amp; Design</th><td>4–6 weeks<br>Fixed fee</td><td><ul class="list-disc pl-4"><li>Maturity and risk assessment</li><li>Data and AI asset landscape scan</li><li>Lighthouse use-case selection</li><li>Governance blueprint and roadmap</li></ul></td><td>Limited visibility or stalled pilots.</td></tr>
-              <tr><th scope="row">Implement</th><td>12–20 weeks<br>Fixed fee per accelerator, or bundled</td><td><ul class="list-disc pl-4"><li>Operating model and control library</li><li>1–3 Aurora accelerators stood up</li><li>Technical integration into your stack</li><li>Production assurance patterns</li></ul></td><td>Scaling AI into production.</td></tr>
-              <tr><th scope="row">Operate</th><td>Ongoing<br>Monthly managed service</td><td><ul class="list-disc pl-4"><li>Continuous monitoring and evidence</li><li>Exceptions and incident response</li><li>Governance reporting cadence</li><li>Quarterly control improvement</li></ul></td><td>Recurring governance capability.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="offering-note">Indicative only. Scope, timing and pricing are agreed with you during Assess &amp; Design based on the domains, use cases and platforms in scope.</p>
-      </div>
-    </section>
-
-    <section id="regulation" class="offering-section offering-band">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">Regulatory readiness</p>
-        <h2>Produce evidence for global data and AI obligations.</h2>
-        <p class="offering-intro">Each building block supports evidence and controls relevant to applicable regulations and voluntary frameworks. This indicative mapping is not legal advice or a guarantee of compliance; applicability, current requirements and effective dates must be confirmed with your legal and compliance teams.</p>
-        <div class="offering-table-wrap" role="region" aria-label="Indicative regulatory and framework mapping" tabindex="0">
-          <table class="offering-table">
-            <caption>Illustrative control-to-obligation alignment; final mappings are confirmed during Assess &amp; Design.</caption>
-            <thead><tr><th scope="col">Building block</th><th scope="col">EU AI Act</th><th scope="col">India: DPDP Act</th><th scope="col">United States</th><th scope="col">Australia</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Data Discovery &amp; Ownership</th><td>Data governance and documentation (Arts. 10, 11).</td><td>Purpose limitation, data mapping and applicable Significant Data Fiduciary duties.</td><td>NIST AI RMF: Map; applicable CPRA inventory obligations.</td><td>AI adoption accountability guidance; privacy record-keeping.</td></tr>
-              <tr><th scope="row">Data Quality &amp; Trust</th><td>Training and input data governance and accuracy (Art. 10).</td><td>Personal data accuracy obligations (Sec. 8(3)).</td><td>NIST AI RMF: Measure; applicable CPRA accuracy requirements.</td><td>APP 10 data quality; risk-management practices.</td></tr>
-              <tr><th scope="row">Synthetic Data &amp; Safe Access</th><td>Representative data and bias mitigation (Art. 10).</td><td>Security safeguards and applicable cross-border processing requirements.</td><td>Data minimization and sector-specific de-identification requirements.</td><td>APP 6/8 use and cross-border disclosure; impact assessments.</td></tr>
-              <tr><th scope="row">Responsible AI</th><td>Risk management, transparency and human oversight (Arts. 9, 13, 14).</td><td>Evidence supporting applicable processing and grievance-redress duties.</td><td>NIST AI RMF: Govern/Manage; applicable state automated-decision requirements.</td><td>Transparency and human-oversight practices.</td></tr>
-              <tr><th scope="row">AI FinOps</th><td>Operational evidence supporting post-market monitoring (Art. 72).</td><td>Evidence supporting accountability for applicable processing activities.</td><td>NIST AI RMF: Manage, including resourcing and oversight.</td><td>Accountability and governance practices.</td></tr>
-              <tr><th scope="row">Observability &amp; Runtime Monitoring</th><td>Logging and post-market monitoring (Arts. 12, 72).</td><td>Personal data breach detection and notification (Sec. 8(6)).</td><td>NIST AI RMF: Measure/Manage; state breach-notification requirements.</td><td>Testing and monitoring; applicable privacy breach notification.</td></tr>
-              <tr><th scope="row">Governance Control Plane</th><td>Risk management and conformity evidence (Arts. 9, 43, 47).</td><td>Applicable DPIA, audit and DPO duties; Data Principal rights workflows.</td><td>Full NIST AI RMF cycle; applicable state deployer duties.</td><td>AI adoption guidance and applicable automated-decision transparency duties.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="offering-note">Voluntary frameworks and legislation are not interchangeable. Requirements vary by jurisdiction, system role and risk classification. Synthetic data does not automatically remove privacy obligations; AI FinOps evidence does not independently satisfy regulatory duties.</p>
-      </div>
-    </section>
-
-    <section id="why-insight" class="offering-section">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">Why Insight</p>
-        <h2>From governance ambition to ongoing operations.</h2>
-        <div class="offering-grid mt-8">
-          <article class="offering-item"><h3>Unified, not siloed</h3><p>Data trust, model risk, GenAI safeguards, agent controls and FinOps in one proposition.</p></article>
-          <article class="offering-item"><h3>Platform-aligned, tool-agnostic</h3><p>Work with your existing Microsoft, Databricks, Snowflake and governance ecosystem, with integrations scoped to your environment.</p></article>
-          <article class="offering-item"><h3>Accelerator-led</h3><p>Reuse assessments, patterns, control libraries, dashboards and playbooks instead of restarting for each use case.</p></article>
-          <article class="offering-item"><h3>Services through operations</h3><p>Connect strategy, implementation and managed governance for continuity throughout the lifecycle.</p></article>
-        </div>
-        <p class="offering-note"><strong>Designed for compliance readiness:</strong> evidence and controls are considered from day one, rather than added after deployment.</p>
-      </div>
-    </section>
-
-    <section id="next-steps" class="offering-section offering-band">
-      <div class="offering-wrap">
-        <p class="text-xs font-semibold uppercase insight-kicker mb-4">Recommended next step</p>
-        <h2>Your story starts with one use case.</h2>
-        <ol class="offering-steps">
-          <li>Select a lighthouse use case.</li>
-          <li>Run a focused maturity and risk workshop.</li>
-          <li>Agree control outcomes and an implementation roadmap.</li>
-        </ol>
-        <p class="mt-6 font-semibold text-white">Trusted data. Controlled AI. Auditable operations.</p>
-        <a href="#engagement" class="mt-6 inline-flex items-center gap-2 font-semibold text-pink-400">Review the engagement options<i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i></a>
-      </div>
-    </section>
-
-    <!-- Closing -->
-    <section class="relative py-28 sm:py-40 overflow-hidden">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(91,124,255,.15),transparent_42%)]"></div>
-      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[280px] rounded-full bg-violet-500/10 blur-[100px]"></div>
-      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-        <span class="inline-flex p-3 rounded-2xl border border-cyan-300/20 bg-cyan-300/[.06] text-cyan-200 shadow-cyan"><i data-lucide="sparkles" class="w-6 h-6"></i></span>
-        <h2 class="mt-7 text-3xl sm:text-5xl lg:text-6xl font-black tracking-[-.045em] text-white">Governance is not a control function.<br><span class="gradient-text">It is a growth enabler.</span></h2>
-        <p class="mt-7 max-w-3xl mx-auto text-base sm:text-lg leading-8 text-slate-400">Aurora™ provides the trust fabric that allows organizations to innovate at scale, manage risk with confidence, and transform AI from experimentation into enterprise value.</p>
-        <div class="mt-10 space-y-2 text-lg sm:text-2xl font-bold"><p>Govern with confidence.</p><p>Scale with trust.</p><p class="text-cyan-300">Transform with Insight.</p></div>
-        <a href="#next-steps" class="mt-10 inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#582873] via-[#D40E8C] to-[#ED1944] px-7 py-4 text-sm font-bold text-white shadow-cyan hover:brightness-110 hover:-translate-y-0.5 transition">Start with a lighthouse use case<i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i></a>
       </div>
     </section>
   </main>
@@ -646,7 +511,7 @@
       <div class="flex justify-between items-start gap-4"><div><p class="text-[10px] uppercase tracking-[.22em] text-cyan-300">Product overview</p><h2 id="modalTitle" class="mt-2 text-2xl sm:text-3xl font-bold text-white">Explore Aurora™</h2></div><button onclick="closeModal()" class="p-2 rounded-xl border border-white/10 text-slate-400 hover:text-white hover:bg-white/[.05]" aria-label="Close"><i data-lucide="x" class="w-5 h-5"></i></button></div>
       <p class="mt-5 text-sm leading-6 text-slate-400">Aurora is designed for organizations that need to scale data and AI while maintaining trust, accountability, cost control, and operational visibility.</p>
       <div class="grid sm:grid-cols-2 gap-3 mt-6">
-        <button onclick="closeModal();location.href='#platform'" class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 text-left hover:border-cyan-300/30 transition"><i data-lucide="layers-3" class="w-5 h-5 text-cyan-300"></i><b class="block mt-3 text-sm text-white">View the control plane</b><span class="block mt-1 text-[11px] text-slate-500">Explore Aurora's foundation</span></button>
+        <button onclick="closeModal();location.href='#journey'" class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 text-left hover:border-cyan-300/30 transition"><i data-lucide="layers-3" class="w-5 h-5 text-cyan-300"></i><b class="block mt-3 text-sm text-white">See how it works</b><span class="block mt-1 text-[11px] text-slate-500">Lifecycle, autonomy and framework</span></button>
         <button onclick="closeModal();location.href='#portfolio'" class="rounded-2xl border border-white/[.08] bg-white/[.025] p-4 text-left hover:border-violet-300/30 transition"><i data-lucide="boxes" class="w-5 h-5 text-violet-300"></i><b class="block mt-3 text-sm text-white">Explore the assets</b><span class="block mt-1 text-[11px] text-slate-500">See the six connected assets</span></button>
       </div>
       <div class="mt-5 rounded-2xl border border-cyan-300/15 bg-cyan-300/[.04] p-4"><p class="text-sm font-semibold text-white">Aurora™ by Insight</p><p class="mt-1 text-xs text-slate-500">The unified operating model for trusted Data and AI governance.</p></div>
@@ -659,7 +524,7 @@
         name:'Core Aurora', subtitle:'Discovery & Governance Control Plane', icon:'network', color:'cyan',
         challenge:'Critical data and AI assets lack clear discovery, ownership and connected governance.',
         statement:'Find, classify and assign ownership to data and AI assets. Unify policy, risk, evidence and accountability across every phase through one common governance control plane.',
-        capabilities:['Data and AI asset inventory','Classification and accountable ownership','Common policies and control library','Risk, evidence and approval records','Audit readiness and governance reporting'],
+        capabilities:['Data and AI asset inventory and discovery','Classification and accountable ownership','Common policies and control library','Risk management, evidence and approval records','Audit readiness and governance reporting'],
         outcomes:['Know what you have','Clear ownership and risk visibility','Consistent governance across all six phases'],
         gradient:'from-cyan-400/20 via-blue-500/8 to-transparent', accent:'text-cyan-300', bg:'bg-cyan-400/10', border:'border-cyan-300/20'
       },
@@ -675,7 +540,7 @@
         name:'Aurora Prism™ · SynGen', subtitle:'Synthetic Data & Safe Access', icon:'gem', color:'violet',
         challenge:'Teams need production-like data, but production copies create delay and governance risk.',
         statement:'Generate realistic, schema-aware and relationship-consistent datasets without distributing production customer records. Configure once, validate the output, and reuse generation jobs across teams and environments.',
-        capabilities:['Schema and relationship intelligence','Deterministic, faker, composed, and optional AI rules','Configurable volumes and repeatable runs','Controlled negative testing','Quality feedback, preview, export, and APIs'],
+        capabilities:['Schema and relationship intelligence','Deterministic, faker, composed, and optional AI rules','Configurable volumes and repeatable runs','Controlled negative testing and quality feedback','MetaUI: governed metadata proposals with human approval'],
         outcomes:['Faster access to usable test data','Broader volume and edge-case coverage','Reduced dependency on production extracts'],
         gradient:'from-violet-500/20 via-fuchsia-500/8 to-transparent', accent:'text-violet-300', bg:'bg-violet-400/10', border:'border-violet-300/20'
       },
@@ -705,14 +570,31 @@
       }
     };
 
-    const journeys = [
-      {id:'discover',label:'Discover',icon:'search',title:'Know What You Have',text:'Find, classify and assign ownership to data and AI assets. Build a trusted inventory with clear accountability and risk visibility.',module:'Core Aurora'},
-      {id:'trust',label:'Trust',icon:'badge-check',title:'Build Trust into Every Data Product',text:'Profile, validate, cleanse, score, and monitor data with reusable rules, quality feedback, and governed review.',module:'Aurora Beacon™'},
-      {id:'enable',label:'Enable',icon:'shield',title:'Innovate Without Exposing Sensitive Data',text:'Provide privacy-safe synthetic data for faster experimentation, testing and controlled sharing. Use SynGen for schema-aware, relationship-consistent datasets.',module:'Aurora Prism™'},
-      {id:'assure',label:'Assure',icon:'scale',title:'Deploy AI Responsibly',text:'Validate fairness, explainability and safety through risk assessment, human oversight and audit-ready assurance evidence.',module:'Aurora Ethos™'},
-      {id:'optimize',label:'Optimize',icon:'circle-dollar-sign',title:'Optimize Cost and Value',text:'Connect consumption to ownership, improve cost transparency, and focus investment on measurable value.',module:'Aurora Pulse™'},
-      {id:'monitor',label:'Monitor',icon:'scan-eye',title:'Maintain Trust After Deployment',text:'Detect drift, failures and incidents early through continuous production monitoring and an incident workflow, before they create business impact.',module:'Aurora Insight™'}
-    ];
+    const views = {
+      lifecycle:{intro:'Six phases, governed end to end by the Core Aurora control plane. Each step shows an illustrative example: moving a GenAI knowledge assistant into production.',steps:[
+        {label:'Discover',icon:'search',tag:'Core Aurora',title:'Know what you have',text:'Find, classify and assign ownership to data and AI assets. Build a trusted inventory with clear accountability and risk visibility.',action:'Register the use case, data sources and a named accountable owner.',outcome:'Ownership resolved in days, without repeated ownership queries.'},
+        {label:'Trust',icon:'badge-check',tag:'Aurora Beacon™',title:'Build trust into every data product',text:'Profile, validate, cleanse, score and monitor data with reusable rules, quality feedback and governed review.',action:'Classify risk and curate authoritative, deduplicated retrieval sources.',outcome:'Retrieval grounded in vetted content only.'},
+        {label:'Enable',icon:'shield',tag:'Aurora Prism™',title:'Innovate without exposing sensitive data',text:'Provide privacy-safe synthetic data and governed metadata for faster experimentation, testing and controlled sharing.',action:'Enforce access controls so sensitive content does not reach the assistant.',outcome:'No sensitive-data exposure found in testing.'},
+        {label:'Assure',icon:'scale',tag:'Aurora Ethos™',title:'Deploy AI responsibly',text:'Validate fairness, explainability and safety through risk assessment, human oversight and audit-ready assurance evidence.',action:'Run groundedness, safety and privacy tests before release.',outcome:'An evidence-backed release gate, not a guess.'},
+        {label:'Optimize',icon:'circle-dollar-sign',tag:'Aurora Pulse™',title:'Optimize cost and value',text:'Connect consumption to ownership, improve cost transparency and focus investment on measurable value.',action:'Instrument usage and cost telemetry from day one.',outcome:'Cost per query visible before it becomes a budget problem.'},
+        {label:'Monitor',icon:'scan-eye',tag:'Aurora Insight™',title:'Maintain trust after deployment',text:'Detect drift, failures and incidents early through continuous production monitoring and an incident workflow.',action:'Build continuous monitoring and an incident workflow into production.',outcome:'Drift detected and remediated before customer impact.'}
+      ]},
+      autonomy:{intro:'Progress through five levels, not one big bang. Each workflow moves up only when its measured evidence supports it, starting with a 90-day pilot to prove Level 2.',steps:[
+        {label:'L1 Manual',icon:'hand',tag:'Level 1',title:'Manual operations',text:'People-driven provisioning and troubleshooting. This is the baseline Aurora measures progress from.',items:[],metric:'Agree the baseline for recurring failures, ticket closure and products under a quality gate.'},
+        {label:'L2 Automated',icon:'workflow',tag:'Level 2',title:'Standardize pipelines and testing',text:'Metadata-driven pipelines with quality gates, scheduled freshness and volume checks, and approved reruns for recoverable failures.',items:[['Core Aurora','Discovery, owner and policy for each data product'],['Beacon™','Profiling, auto-generated rules, quality score'],['Insight™','Run logs and audit history'],['Pulse™','Cost tagged per pipeline'],['Prism™ & MetaUI','Synthetic test data; reviewed metadata']],metric:'Reliability: recurring-failure index and priority data products under a quality gate.'},
+        {label:'L3 Intelligent',icon:'brain-circuit',tag:'Level 3',title:'Predict and diagnose with AI',text:'Adaptive baselines, ML anomaly and drift detection and AI root-cause hypotheses, run in shadow mode first with engineers confirming every alert.',items:[['Core Aurora','Evidence and accountability for every alert'],['Beacon™','ML anomaly, drift and AI diagnostics'],['Insight™','Lineage and runtime monitoring'],['Pulse™','Cost per run and per dataset'],['Ethos™','Explainable alerts and diagnostics'],['Prism™ & MetaUI','Test data to validate alerts']],metric:'Early detection: issues caught before a user ticket, alert precision and warning time.'},
+        {label:'L4 Autonomous',icon:'refresh-cw',tag:'Level 4',title:'Self-heal within guardrails',text:'Approved reruns and low-risk fixes run automatically within retry limits, with an audit trail and rollback.',items:[['Core Aurora','Policy gates decide which actions run unattended'],['Beacon™','Remediation suggestions for low-risk fixes'],['Insight™','Measures self-heal outcomes'],['Pulse™','Dynamic cost optimization'],['Ethos™','Guardrails on AI-driven actions'],['Prism™ & MetaUI','Test self-healing safely before release']],metric:'Service performance: recoverable failures fixed without a human touch, and zero unapproved changes.'},
+        {label:'L5 Zero-touch',icon:'sparkles',tag:'Level 5',title:'Humans only for exceptions',text:'Routine incidents close without a ticket; people handle exceptions only, with a tested kill switch. Adopted workflow by workflow.',items:[['Core Aurora','Agent identity, permitted actions, kill switch'],['Beacon™','Quality gates across all data products'],['Insight™','Exception-only alerting'],['Pulse™','Spend per autonomous workflow'],['Ethos™','Assurance and release gates'],['Prism™ & MetaUI','Governed self-service data requests']],metric:'Capacity released: engineering hours redirected from routine operations.'}
+      ]},
+      framework:{intro:'Five dimensions that turn data governance into trusted, explainable, business-aware AI.',steps:[
+        {label:'Govern',icon:'landmark',tag:'Define the rules',title:'Govern',text:'An AI Governance Board, Responsible AI policies, risk classification, regulatory compliance and human oversight.'},
+        {label:'Understand',icon:'book-open',tag:'Give data business meaning',title:'Understand',text:'Canonical models, a common business vocabulary, ontologies, catalogs, lineage and knowledge graphs help AI understand the business, not just the data.'},
+        {label:'Trust',icon:'shield-check',tag:'Prove reliability',title:'Trust',text:'Beacon for profiling and quality; Ethos for bias, fairness and explainability; Insight for observability, lineage and traceability.'},
+        {label:'Operate',icon:'repeat',tag:'Govern the full AI lifecycle',title:'Operate',text:'Ideate → Design → Build → Validate → Deploy → Monitor → Retire, with model cards, risk assessments, approvals and audit trails.'},
+        {label:'Optimize',icon:'trending-up',tag:'Measure value and economics',title:'Optimize',text:'Pulse connects AI FinOps, token economics, cost allocation, utilization, ROI and business value realization.'}
+      ]}
+    };
+    let currentView='lifecycle', currentStep=0;
 
     function renderPanels(){
       document.getElementById('modulePanels').innerHTML = Object.entries(modules).map(([id,m],idx)=>`
@@ -741,16 +623,46 @@
     }
     function activateModule(id){ document.getElementById('portfolio').scrollIntoView({behavior:'smooth'}); setTimeout(()=>selectModule(id),420); }
 
-    function renderJourney(){
-      const wrap=document.getElementById('journeyNodes');
-      wrap.innerHTML=journeys.map((j,i)=>`<button data-journey="${j.id}" onclick="selectJourney('${j.id}')" class="journey-node ${i===0?'active':''} rounded-xl border border-white/[.08] bg-white/[.025] p-3 text-slate-500 hover:text-white transition"><i data-lucide="${j.icon}" class="w-4 h-4 mx-auto"></i><span class="block mt-2 text-[10px] font-semibold">${j.label}</span></button>`).join('');
-      selectJourney('discover');
+    function setView(view){
+      currentView=view; currentStep=0;
+      document.querySelectorAll('.view-toggle button').forEach(b=>{const on=b.dataset.view===view;b.classList.toggle('active',on);b.setAttribute('aria-selected',on)});
+      const v=views[view], wrap=document.getElementById('journeyNodes');
+      document.getElementById('journeyIntro').textContent=v.intro;
+      wrap.style.setProperty('--n',v.steps.length);
+      wrap.innerHTML=v.steps.map((s,i)=>`<button data-step="${i}" class="journey-node rounded-xl border border-white/[.08] bg-white/[.025] p-3 text-slate-500 hover:text-white transition"><i data-lucide="${s.icon}" class="w-4 h-4 mx-auto"></i><span class="block mt-2 text-[11px] font-semibold">${s.label}</span></button>`).join('');
+      wrap.querySelectorAll('.journey-node').forEach(b=>b.addEventListener('click',()=>selectStep(+b.dataset.step)));
+      selectStep(0);
     }
-    function selectJourney(id){
-      const j=journeys.find(x=>x.id===id); if(!j)return;
-      document.querySelectorAll('.journey-node').forEach(n=>n.classList.toggle('active',n.dataset.journey===id));
-      document.getElementById('journeyDetail').innerHTML=`<div class="grid sm:grid-cols-[1fr_auto] gap-5 items-center"><div><p class="text-[10px] uppercase tracking-[.2em] text-cyan-300">${j.module}</p><h3 class="mt-2 text-xl font-bold text-white">${j.title}</h3><p class="mt-2 text-sm leading-6 text-slate-400">${j.text}</p></div><span class="text-5xl font-black text-white/[.04]">${String(journeys.indexOf(j)+1).padStart(2,'0')}</span></div>`;
+    function selectStep(i){
+      const v=views[currentView], s=v.steps[i]; if(!s)return;
+      currentStep=i;
+      document.querySelectorAll('.journey-node').forEach(n=>{const on=+n.dataset.step===i;n.classList.toggle('active',on);n.setAttribute('aria-pressed',on)});
+      document.getElementById('journeyBar').style.width=`${(i+1)/v.steps.length*100}%`;
+      document.getElementById('journeyPrev').disabled=i===0;
+      document.getElementById('journeyNext').disabled=i===v.steps.length-1;
+      let extra='';
+      if(s.action) extra=`<div class="mt-5 grid sm:grid-cols-2 gap-3"><div class="rounded-xl border border-white/[.07] bg-white/[.025] p-4"><p class="text-[10px] uppercase tracking-[.18em] text-slate-500">Example action</p><p class="mt-1 text-sm text-white">${s.action}</p></div><div class="rounded-xl border border-white/[.07] bg-white/[.025] p-4"><p class="text-[10px] uppercase tracking-[.18em] text-slate-500">Control outcome</p><p class="mt-1 text-sm text-white">${s.outcome}</p></div></div>`;
+      if(s.items) extra=(s.items.length?`<div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">${s.items.map(([a,b])=>`<div class="rounded-xl border border-white/[.07] bg-white/[.025] p-3"><p class="text-xs font-bold text-white">${a}</p><p class="mt-1 text-xs text-slate-400">${b}</p></div>`).join('')}</div>`:'')+`<p class="mt-4 text-xs text-slate-500"><strong class="text-white">Proof:</strong> ${s.metric}</p>`;
+      document.getElementById('journeyDetail').innerHTML=`<div class="detail-in grid sm:grid-cols-[1fr_auto] gap-5 items-start"><div><p class="text-[10px] uppercase tracking-[.2em] text-cyan-300">${s.tag}</p><h3 class="mt-2 text-xl font-bold text-white">${s.title}</h3><p class="mt-2 text-sm leading-6 text-slate-400">${s.text}</p></div><span class="text-5xl font-black text-white/[.06]">${String(i+1).padStart(2,'0')}</span></div><div class="detail-in">${extra}</div>`;
       lucide.createIcons();
+    }
+    function initJourney(){
+      document.querySelectorAll('.view-toggle button').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
+      document.getElementById('journeyPrev').addEventListener('click',()=>selectStep(currentStep-1));
+      document.getElementById('journeyNext').addEventListener('click',()=>selectStep(currentStep+1));
+      setView('lifecycle');
+    }
+
+    function animateCounters(){
+      const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+        if(!e.isIntersecting)return;
+        obs.unobserve(e.target);
+        const el=e.target, to=+el.dataset.count, from=+(el.dataset.from||0), start=performance.now(), dur=still?0:1400;
+        const tick=now=>{const p=dur?Math.min(1,(now-start)/dur):1;el.textContent=Math.round(from+(to-from)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};
+        requestAnimationFrame(tick);
+      }),{threshold:.5});
+      document.querySelectorAll('[data-count]').forEach(el=>obs.observe(el));
     }
 
     function openModal(){const m=document.getElementById('exploreModal');m.classList.remove('hidden');m.classList.add('flex');document.body.style.overflow='hidden';lucide.createIcons();}
@@ -761,9 +673,9 @@
       document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
     }
     function updateNav(){
-      const sections=['home','challenge','platform','portfolio','autonomy','outcomes','engagement']; let current='home';
+      const sections=['home','challenge','portfolio','journey','outcomes','engagement']; let current='home';
       sections.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=110)current=id});
-      document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${current}`));
+      document.querySelectorAll('.nav-link,.dot-nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${current}`));
     }
 
     document.getElementById('menuButton').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
@@ -798,7 +710,7 @@
       requestAnimationFrame(frame);
     }
 
-    renderPanels(); renderJourney(); lucide.createIcons(); observeReveals(); updateNav(); animateUniverse();
+    renderPanels(); initJourney(); lucide.createIcons(); observeReveals(); updateNav(); animateUniverse(); animateCounters();
   </script>
 </body>
 </html>
